@@ -42,8 +42,8 @@ elements:
       action: toggle
     hold_action:
       action: more-info
-  - entity: light.outdoor_lamp_door
-    title: outdoor_lamp_door
+  - entity: light.outdoor_lamp_door_1
+    title: outdoor_lamp_door_1
     icon: mdi:outdoor-lamp
     label: ''
     style:

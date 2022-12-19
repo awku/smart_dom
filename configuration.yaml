@@ -39,8 +39,8 @@ dummy:
       name: Lock door
   # lights
     - platform: light
-      entity_id: outdoor_lamp_door
-      name: CCTV door
+      entity_id: outdoor_lamp_door_1
+      name: Outdoor lamp door 1
 # hall
   # lights
     - platform: light
