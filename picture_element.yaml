@@ -19,8 +19,8 @@ elements:
     icon: mdi:lock
     label: ''
     style:
-      top: 53.38%
-      left: 31.47%
+      top: 48.98%
+      left: 31.81%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -33,8 +33,8 @@ elements:
     icon: mdi:cctv
     label: ''
     style:
-      top: 38.62%
-      left: 23.30%
+      top: 33.28%
+      left: 23.42%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -47,8 +47,8 @@ elements:
     icon: mdi:outdoor-lamp
     label: ''
     style:
-      top: 66.56%
-      left: 23.50%
+      top: 56.51%
+      left: 23.94%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -61,8 +61,8 @@ elements:
     icon: mdi:ceiling-light
     label: ''
     style:
-      top: 56.51%
-      left: 38.01%
+      top: 52.75%
+      left: 35.82%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -75,8 +75,8 @@ elements:
     icon: mdi:ceiling-light
     label: ''
     style:
-      top: 56.51%
-      left: 45.58%
+      top: 52.75%
+      left: 44.21%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -89,8 +89,8 @@ elements:
     icon: mdi:ceiling-light
     label: ''
     style:
-      top: 56.51%
-      left: 52.53%
+      top: 52.75%
+      left: 52.60%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -103,8 +103,8 @@ elements:
     icon: mdi:coffee-maker
     label: ''
     style:
-      top: 78.81%
-      left: 63.36%
+      top: 78.18%
+      left: 62.56%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -117,7 +117,7 @@ elements:
     icon: mdi:kettle
     label: ''
     style:
-      top: 78.49%
+      top: 78.18%
       left: 56.61%
       transform: scale(1)
       transformOrigin: top left
@@ -131,8 +131,8 @@ elements:
     icon: mdi:ceiling-light
     label: ''
     style:
-      top: 56.51%
-      left: 60.91%
+      top: 52.75%
+      left: 60.99%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -145,8 +145,8 @@ elements:
     icon: mdi:led-strip
     label: ''
     style:
-      top: 82.89%
-      left: 56.82%
+      top: 85.40%
+      left: 57.50%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -159,8 +159,8 @@ elements:
     icon: mdi:ceiling-light
     label: ''
     style:
-      top: 67.19%
-      left: 54.98%
+      top: 63.11%
+      left: 52.60%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -173,8 +173,8 @@ elements:
     icon: mdi:ceiling-light
     label: ''
     style:
-      top: 67.19%
-      left: 60.70%
+      top: 63.11%
+      left: 60.99%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -187,8 +187,8 @@ elements:
     icon: mdi:ceiling-light
     label: ''
     style:
-      top: 74.41%
-      left: 55.18%
+      top: 73.47%
+      left: 52.60%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -201,8 +201,8 @@ elements:
     icon: mdi:ceiling-light
     label: ''
     style:
-      top: 74.10%
-      left: 60.70%
+      top: 73.47%
+      left: 60.99%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -215,8 +215,8 @@ elements:
     icon: mdi:watering-can
     label: ''
     style:
-      top: 81.00%
-      left: 84.21%
+      top: 82.57%
+      left: 83.53%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -229,8 +229,8 @@ elements:
     icon: mdi:television
     label: ''
     style:
-      top: 59.65%
-      left: 75.21%
+      top: 55.01%
+      left: 76.89%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -243,8 +243,8 @@ elements:
     icon: mdi:disc-player
     label: ''
     style:
-      top: 59.65%
-      left: 71.12%
+      top: 55.01%
+      left: 72.70%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -257,8 +257,8 @@ elements:
     icon: mdi:blinds
     label: ''
     style:
-      top: 74.73%
-      left: 90.75%
+      top: 74.41%
+      left: 91.22%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -271,8 +271,8 @@ elements:
     icon: mdi:radiator
     label: ''
     style:
-      top: 71.59%
-      left: 85.43%
+      top: 70.02%
+      left: 85.63%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -285,7 +285,7 @@ elements:
     icon: mdi:fan
     label: ''
     style:
-      top: 65.62%
+      top: 63.42%
       left: 83.18%
       transform: scale(1)
       transformOrigin: top left
@@ -313,8 +313,8 @@ elements:
     icon: mdi:lamp
     label: ''
     style:
-      top: 80.38%
-      left: 84.00%
+      top: 77.86%
+      left: 85.28%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -327,8 +327,8 @@ elements:
     icon: mdi:outdoor-lamp
     label: ''
     style:
-      top: 58.71%
-      left: 92.58%
+      top: 54.32%
+      left: 92.10%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -341,8 +341,8 @@ elements:
     icon: mdi:outdoor-lamp
     label: ''
     style:
-      top: 79.75%
-      left: 96.67%
+      top: 78.81%
+      left: 96.64%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -355,7 +355,7 @@ elements:
     icon: mdi:ceiling-light
     label: ''
     style:
-      top: 65.62%
+      top: 63.11%
       left: 74.19%
       transform: scale(1)
       transformOrigin: top left
@@ -369,7 +369,7 @@ elements:
     icon: mdi:ceiling-light
     label: ''
     style:
-      top: 65.62%
+      top: 63.11%
       left: 80.32%
       transform: scale(1)
       transformOrigin: top left
@@ -383,8 +383,8 @@ elements:
     icon: mdi:ceiling-light
     label: ''
     style:
-      top: 77.24%
-      left: 74.80%
+      top: 73.47%
+      left: 74.19%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -397,8 +397,8 @@ elements:
     icon: mdi:ceiling-light
     label: ''
     style:
-      top: 77.55%
-      left: 80.73%
+      top: 73.47%
+      left: 80.32%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -411,8 +411,8 @@ elements:
     icon: mdi:cctv
     label: ''
     style:
-      top: 49.92%
-      left: 85.23%
+      top: 45.21%
+      left: 85.63%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -425,8 +425,8 @@ elements:
     icon: mdi:watering-can
     label: ''
     style:
-      top: 36.73%
-      left: 74.39%
+      top: 29.83%
+      left: 74.80%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -439,8 +439,8 @@ elements:
     icon: mdi:television
     label: ''
     style:
-      top: 49.29%
-      left: 69.49%
+      top: 43.90%
+      left: 69.73%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -453,8 +453,8 @@ elements:
     icon: mdi:disc-player
     label: ''
     style:
-      top: 48.98%
-      left: 74.19%
+      top: 43.90%
+      left: 73.57%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -467,8 +467,8 @@ elements:
     icon: mdi:blinds
     label: ''
     style:
-      top: 37.36%
-      left: 79.71%
+      top: 30.77%
+      left: 79.69%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -481,8 +481,8 @@ elements:
     icon: mdi:radiator
     label: ''
     style:
-      top: 43.01%
-      left: 76.44%
+      top: 37.99%
+      left: 76.54%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -495,8 +495,8 @@ elements:
     icon: mdi:fan
     label: ''
     style:
-      top: 32.34%
-      left: 51.91%
+      top: 23.86%
+      left: 51.20%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -509,8 +509,8 @@ elements:
     icon: mdi:floor-lamp
     label: ''
     style:
-      top: 29.83%
-      left: 55.39%
+      top: 22.92%
+      left: 55.22%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -523,8 +523,8 @@ elements:
     icon: mdi:outdoor-lamp
     label: ''
     style:
-      top: 21.04%
-      left: 81.14%
+      top: 12.56%
+      left: 82.31%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -537,8 +537,8 @@ elements:
     icon: mdi:outdoor-lamp
     label: ''
     style:
-      top: 39.87%
-      left: 85.23%
+      top: 29.83%
+      left: 84.93%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -551,8 +551,8 @@ elements:
     icon: mdi:lightbulb
     label: ''
     style:
-      top: 25.12%
-      left: 52.32%
+      top: 16.01%
+      left: 51.90%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -565,8 +565,8 @@ elements:
     icon: mdi:led-strip
     label: ''
     style:
-      top: 28.89%
-      left: 79.10%
+      top: 18.52%
+      left: 77.77%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -579,8 +579,8 @@ elements:
     icon: mdi:ceiling-light
     label: ''
     style:
-      top: 35.16%
-      left: 53.75%
+      top: 27.32%
+      left: 52.60%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -593,8 +593,8 @@ elements:
     icon: mdi:ceiling-light
     label: ''
     style:
-      top: 35.16%
-      left: 60.09%
+      top: 27.32%
+      left: 58.60%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -607,8 +607,8 @@ elements:
     icon: mdi:ceiling-light
     label: ''
     style:
-      top: 35.16%
-      left: 65.81%
+      top: 27.32%
+      left: 64.60%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -621,8 +621,8 @@ elements:
     icon: mdi:ceiling-light
     label: ''
     style:
-      top: 35.16%
-      left: 71.33%
+      top: 27.32%
+      left: 70.60%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -635,8 +635,8 @@ elements:
     icon: mdi:ceiling-light
     label: ''
     style:
-      top: 44.27%
-      left: 53.75%
+      top: 37.99%
+      left: 52.60%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -649,8 +649,8 @@ elements:
     icon: mdi:ceiling-light
     label: ''
     style:
-      top: 44.27%
-      left: 59.88%
+      top: 37.99%
+      left: 58.60%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -663,8 +663,8 @@ elements:
     icon: mdi:ceiling-light
     label: ''
     style:
-      top: 44.27%
-      left: 67.04%
+      top: 37.99%
+      left: 64.60%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -677,8 +677,8 @@ elements:
     icon: mdi:ceiling-light
     label: ''
     style:
-      top: 44.27%
-      left: 73.17%
+      top: 37.99%
+      left: 70.60%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -691,8 +691,8 @@ elements:
     icon: mdi:washing-machine
     label: ''
     style:
-      top: 40.82%
-      left: 42.72%
+      top: 34.54%
+      left: 42.99%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -705,8 +705,8 @@ elements:
     icon: mdi:radiator
     label: ''
     style:
-      top: 35.16%
-      left: 38.63%
+      top: 28.26%
+      left: 39.84%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -719,8 +719,8 @@ elements:
     icon: mdi:blinds
     label: ''
     style:
-      top: 23.86%
-      left: 36.99%
+      top: 13.81%
+      left: 36.35%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -733,8 +733,8 @@ elements:
     icon: mdi:outdoor-lamp
     label: ''
     style:
-      top: 13.50%
-      left: 34.95%
+      top: 3.14%
+      left: 34.08%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -747,8 +747,8 @@ elements:
     icon: mdi:lightbulb
     label: ''
     style:
-      top: 35.48%
-      left: 30.04%
+      top: 27.94%
+      left: 29.18%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -761,8 +761,8 @@ elements:
     icon: mdi:ceiling-light
     label: ''
     style:
-      top: 30.14%
-      left: 36.38%
+      top: 21.98%
+      left: 35.82%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -775,8 +775,8 @@ elements:
     icon: mdi:ceiling-light
     label: ''
     style:
-      top: 38.93%
-      left: 36.38%
+      top: 31.71%
+      left: 35.82%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -789,8 +789,8 @@ elements:
     icon: mdi:robot-vacuum
     label: ''
     style:
-      top: 50.86%
-      left: 43.94%
+      top: 46.78%
+      left: 44.39%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
