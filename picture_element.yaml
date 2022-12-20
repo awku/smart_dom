@@ -1,19 +1,485 @@
 image: /local/lovelace/house.png
 elements:
+  - conditions:
+      - entity: input_select.show_all
+        state: Do not show
+    elements:
+      - style:
+          top: 65.9%
+          left: 49.85%
+          width: 17.55%
+          transform: scale(1)
+          transformOrigin: top left
+          opacity: 0
+        image: /local/lovelace/kitchen.png
+        type: image
+      - style:
+          top: 55.9%
+          left: 70.5%
+          width: 24.2%
+          transform: scale(1)
+          transformOrigin: top left
+          opacity: 0
+        image: /local/lovelace/bedroom.png
+        type: image
+      - style:
+          top: 12%
+          left: 29.2%
+          width: 17.4%
+          transform: scale(1)
+          transformOrigin: top left
+          opacity: 0
+        image: /local/lovelace/bathroom.png
+        type: image
+      - style:
+          top: 43.1%
+          left: 29.2%
+          width: 38.25%
+          transform: scale(1)
+          transformOrigin: top left
+          opacity: 0
+        image: /local/lovelace/hall.png
+        type: image
+      - style:
+          top: 12%
+          left: 43%
+          width: 40.14%
+          transform: scale(1)
+          transformOrigin: top left
+          opacity: 0
+        image: /local/lovelace/living-room.png
+        type: image
+    type: conditional
+  - conditions:
+      - entity: input_select.show_all
+        state: Show
+    elements:
+      - entity: light.ceiling_light_hall_1
+        title: ceiling_light_hall_1
+        icon: mdi:ceiling-light
+        label: ''
+        style:
+          top: 52.75%
+          left: 35.82%
+          transform: scale(1)
+          transformOrigin: top left
+        type: state-icon
+        tap_action:
+          action: toggle
+        hold_action:
+          action: more-info
+      - entity: light.ceiling_light_hall_2
+        title: ceiling_light_hall_2
+        icon: mdi:ceiling-light
+        label: ''
+        style:
+          top: 52.75%
+          left: 44.21%
+          transform: scale(1)
+          transformOrigin: top left
+        type: state-icon
+        tap_action:
+          action: toggle
+        hold_action:
+          action: more-info
+      - entity: light.ceiling_light_hall_3
+        title: ceiling_light_hall_3
+        icon: mdi:ceiling-light
+        label: ''
+        style:
+          top: 52.75%
+          left: 52.60%
+          transform: scale(1)
+          transformOrigin: top left
+        type: state-icon
+        tap_action:
+          action: toggle
+        hold_action:
+          action: more-info
+      - entity: light.ceiling_light_table_kitchen
+        title: ceiling_light_table_kitchen
+        icon: mdi:ceiling-light
+        label: ''
+        style:
+          top: 52.75%
+          left: 60.99%
+          transform: scale(1)
+          transformOrigin: top left
+        type: state-icon
+        tap_action:
+          action: toggle
+        hold_action:
+          action: more-info
+      - entity: light.led_strip_kitchen
+        title: led_strip_kitchen
+        icon: mdi:led-strip
+        label: ''
+        style:
+          top: 85.40%
+          left: 57.50%
+          transform: scale(1)
+          transformOrigin: top left
+        type: state-icon
+        tap_action:
+          action: toggle
+        hold_action:
+          action: more-info
+      - entity: light.ceiling_light_kitchen_1
+        title: ceiling_light_kitchen_1
+        icon: mdi:ceiling-light
+        label: ''
+        style:
+          top: 63.11%
+          left: 52.60%
+          transform: scale(1)
+          transformOrigin: top left
+        type: state-icon
+        tap_action:
+          action: toggle
+        hold_action:
+          action: more-info
+      - entity: light.ceiling_light_kitchen_2
+        title: ceiling_light_kitchen_2
+        icon: mdi:ceiling-light
+        label: ''
+        style:
+          top: 63.11%
+          left: 60.99%
+          transform: scale(1)
+          transformOrigin: top left
+        type: state-icon
+        hold_action:
+          action: more-info
+        tap_action:
+          action: toggle
+      - entity: light.ceiling_light_kitchen_3
+        title: ceiling_light_kitchen_3
+        icon: mdi:ceiling-light
+        label: ''
+        style:
+          top: 73.47%
+          left: 52.60%
+          transform: scale(1)
+          transformOrigin: top left
+        type: state-icon
+        tap_action:
+          action: toggle
+        hold_action:
+          action: more-info
+      - entity: light.ceiling_light_kitchen_4
+        title: ceiling_light_kitchen_4
+        icon: mdi:ceiling-light
+        label: ''
+        style:
+          top: 73.47%
+          left: 60.99%
+          transform: scale(1)
+          transformOrigin: top left
+        type: state-icon
+        tap_action:
+          action: toggle
+        hold_action:
+          action: more-info
+      - entity: light.lamp_bedroom_1
+        title: lamp_bedroom_1
+        icon: mdi:lamp
+        label: ''
+        style:
+          top: 80.06%
+          left: 69.69%
+          transform: scale(1)
+          transformOrigin: top left
+        type: state-icon
+        tap_action:
+          action: toggle
+        hold_action:
+          action: more-info
+      - entity: light.lamp_bedroom_2
+        title: lamp_bedroom_2
+        icon: mdi:lamp
+        label: ''
+        style:
+          top: 77.86%
+          left: 85.28%
+          transform: scale(1)
+          transformOrigin: top left
+        type: state-icon
+        tap_action:
+          action: toggle
+        hold_action:
+          action: more-info
+      - entity: light.ceiling_light_bedroom_1
+        title: ceiling_light_bedroom_1
+        icon: mdi:ceiling-light
+        label: ''
+        style:
+          top: 63.11%
+          left: 74.19%
+          transform: scale(1)
+          transformOrigin: top left
+        type: state-icon
+        tap_action:
+          action: toggle
+        hold_action:
+          action: more-info
+      - entity: light.ceiling_light_bedroom_2
+        title: ceiling_light_bedroom_2
+        icon: mdi:ceiling-light
+        label: ''
+        style:
+          top: 63.11%
+          left: 80.32%
+          transform: scale(1)
+          transformOrigin: top left
+        type: state-icon
+        tap_action:
+          action: toggle
+        hold_action:
+          action: more-info
+      - entity: light.ceiling_light_bedroom_3
+        title: ceiling_light_bedroom_3
+        icon: mdi:ceiling-light
+        label: ''
+        style:
+          top: 73.47%
+          left: 74.19%
+          transform: scale(1)
+          transformOrigin: top left
+        type: state-icon
+        tap_action:
+          action: toggle
+        hold_action:
+          action: more-info
+      - entity: light.ceiling_light_bedroom_4
+        title: ceiling_light_bedroom_4
+        icon: mdi:ceiling-light
+        label: ''
+        style:
+          top: 73.47%
+          left: 80.32%
+          transform: scale(1)
+          transformOrigin: top left
+        type: state-icon
+        tap_action:
+          action: toggle
+        hold_action:
+          action: more-info
+      - entity: light.floor_lamp_living_room
+        title: floor_lamp_living_room
+        icon: mdi:floor-lamp
+        label: ''
+        style:
+          top: 22.92%
+          left: 55.22%
+          transform: scale(1)
+          transformOrigin: top left
+        type: state-icon
+        tap_action:
+          action: toggle
+        hold_action:
+          action: more-info
+      - entity: light.wall_lightbulb_living_room
+        title: wall_lighbulb_living_room
+        icon: mdi:lightbulb
+        label: ''
+        style:
+          top: 16.01%
+          left: 51.90%
+          transform: scale(1)
+          transformOrigin: top left
+        type: state-icon
+        tap_action:
+          action: toggle
+        hold_action:
+          action: more-info
+      - entity: light.led_strip_living_room
+        title: led_strip_living_room
+        icon: mdi:led-strip
+        label: ''
+        style:
+          top: 18.52%
+          left: 77.77%
+          transform: scale(1)
+          transformOrigin: top left
+        type: state-icon
+        tap_action:
+          action: toggle
+        hold_action:
+          action: more-info
+      - entity: light.ceiling_light_living_room_1
+        title: ceiling_light_living_room_1
+        icon: mdi:ceiling-light
+        label: ''
+        style:
+          top: 27.32%
+          left: 52.60%
+          transform: scale(1)
+          transformOrigin: top left
+        type: state-icon
+        tap_action:
+          action: toggle
+        hold_action:
+          action: more-info
+      - entity: light.ceiling_light_living_room_2
+        title: ceiling_light_living_room_2
+        icon: mdi:ceiling-light
+        label: ''
+        style:
+          top: 27.32%
+          left: 58.60%
+          transform: scale(1)
+          transformOrigin: top left
+        type: state-icon
+        tap_action:
+          action: toggle
+        hold_action:
+          action: more-info
+      - entity: light.ceiling_light_living_room_3
+        title: ceiling_light_living_room_3
+        icon: mdi:ceiling-light
+        label: ''
+        style:
+          top: 27.32%
+          left: 64.60%
+          transform: scale(1)
+          transformOrigin: top left
+        type: state-icon
+        tap_action:
+          action: toggle
+        hold_action:
+          action: more-info
+      - entity: light.ceiling_light_living_room_4
+        title: ceiling_light_living_room_4
+        icon: mdi:ceiling-light
+        label: ''
+        style:
+          top: 27.32%
+          left: 70.60%
+          transform: scale(1)
+          transformOrigin: top left
+        type: state-icon
+        tap_action:
+          action: toggle
+        hold_action:
+          action: more-info
+      - entity: light.ceiling_light_living_room_5
+        title: ceiling_light_living_room_5
+        icon: mdi:ceiling-light
+        label: ''
+        style:
+          top: 37.99%
+          left: 52.60%
+          transform: scale(1)
+          transformOrigin: top left
+        type: state-icon
+        tap_action:
+          action: toggle
+        hold_action:
+          action: more-info
+      - entity: light.ceiling_light_living_room_6
+        title: ceiling_light_living_room_6
+        icon: mdi:ceiling-light
+        label: ''
+        style:
+          top: 37.99%
+          left: 58.60%
+          transform: scale(1)
+          transformOrigin: top left
+        type: state-icon
+        tap_action:
+          action: toggle
+        hold_action:
+          action: more-info
+      - entity: light.ceiling_light_living_room_7
+        title: ceiling_light_living_room_7
+        icon: mdi:ceiling-light
+        label: ''
+        style:
+          top: 37.99%
+          left: 64.60%
+          transform: scale(1)
+          transformOrigin: top left
+        type: state-icon
+        tap_action:
+          action: toggle
+        hold_action:
+          action: more-info
+      - entity: light.ceiling_light_living_room_8
+        title: ceiling_light_living_room_8
+        icon: mdi:ceiling-light
+        label: ''
+        style:
+          top: 37.99%
+          left: 70.60%
+          transform: scale(1)
+          transformOrigin: top left
+        type: state-icon
+        tap_action:
+          action: toggle
+        hold_action:
+          action: more-info
+      - entity: light.mirror_light_bathroom
+        title: mirror_light_bathroom
+        icon: mdi:lightbulb
+        label: ''
+        style:
+          top: 27.94%
+          left: 29.18%
+          transform: scale(1)
+          transformOrigin: top left
+        type: state-icon
+        tap_action:
+          action: toggle
+        hold_action:
+          action: more-info
+      - entity: light.ceiling_light_bathroom_1
+        title: ceiling_light_bathroom_1
+        icon: mdi:ceiling-light
+        label: ''
+        style:
+          top: 21.98%
+          left: 35.82%
+          transform: scale(1)
+          transformOrigin: top left
+        type: state-icon
+        tap_action:
+          action: toggle
+        hold_action:
+          action: more-info
+      - entity: light.ceiling_light_bathroom_2
+        title: ceiling_light_bathroom_2
+        icon: mdi:ceiling-light
+        label: ''
+        style:
+          top: 31.71%
+          left: 35.82%
+          transform: scale(1)
+          transformOrigin: top left
+        type: state-icon
+        tap_action:
+          action: toggle
+        hold_action:
+          action: more-info
+    type: conditional
   - entity: input_select.show_all
     title: view
     label: ''
     style:
       top: 21.35%
       left: 6.95%
+      width: 5%
       transform: scale(1)
       transformOrigin: top left
+    image: /local/lovelace/see-icon.png
+    state_image:
+      Show: /local/lovelace/see-icon.png
+      Do not show: /local/lovelace/blind-icon.png
     tap_action:
       action: call-service
       service: input_select.select_next
       service_data:
         entity_id: input_select.show_all
-    type: state-icon
+    type: image
   - entity: switch.lock_door
     title: lock_door
     icon: mdi:lock
@@ -42,62 +508,6 @@ elements:
       action: toggle
     hold_action:
       action: more-info
-  - entity: light.outdoor_lamp_door_1
-    title: outdoor_lamp_door_1
-    icon: mdi:outdoor-lamp
-    label: ''
-    style:
-      top: 56.51%
-      left: 23.94%
-      transform: scale(1)
-      transformOrigin: top left
-    type: state-icon
-    tap_action:
-      action: toggle
-    hold_action:
-      action: more-info
-  - entity: light.ceiling_light_hall_1
-    title: ceiling_light_hall_1
-    icon: mdi:ceiling-light
-    label: ''
-    style:
-      top: 52.75%
-      left: 35.82%
-      transform: scale(1)
-      transformOrigin: top left
-    type: state-icon
-    tap_action:
-      action: toggle
-    hold_action:
-      action: more-info
-  - entity: light.ceiling_light_hall_2
-    title: ceiling_light_hall_2
-    icon: mdi:ceiling-light
-    label: ''
-    style:
-      top: 52.75%
-      left: 44.21%
-      transform: scale(1)
-      transformOrigin: top left
-    type: state-icon
-    tap_action:
-      action: toggle
-    hold_action:
-      action: more-info
-  - entity: light.ceiling_light_hall_3
-    title: ceiling_light_hall_3
-    icon: mdi:ceiling-light
-    label: ''
-    style:
-      top: 52.75%
-      left: 52.60%
-      transform: scale(1)
-      transformOrigin: top left
-    type: state-icon
-    tap_action:
-      action: toggle
-    hold_action:
-      action: more-info
   - entity: switch.coffee_maker_kitchen
     title: coffee_maker_kitchen
     icon: mdi:coffee-maker
@@ -119,90 +529,6 @@ elements:
     style:
       top: 78.18%
       left: 56.61%
-      transform: scale(1)
-      transformOrigin: top left
-    type: state-icon
-    tap_action:
-      action: toggle
-    hold_action:
-      action: more-info
-  - entity: light.ceiling_light_table_kitchen
-    title: ceiling_light_table_kitchen
-    icon: mdi:ceiling-light
-    label: ''
-    style:
-      top: 52.75%
-      left: 60.99%
-      transform: scale(1)
-      transformOrigin: top left
-    type: state-icon
-    tap_action:
-      action: toggle
-    hold_action:
-      action: more-info
-  - entity: light.led_strip_kitchen
-    title: led_strip_kitchen
-    icon: mdi:led-strip
-    label: ''
-    style:
-      top: 85.40%
-      left: 57.50%
-      transform: scale(1)
-      transformOrigin: top left
-    type: state-icon
-    tap_action:
-      action: toggle
-    hold_action:
-      action: more-info
-  - entity: light.ceiling_light_kitchen_1
-    title: ceiling_light_kitchen_1
-    icon: mdi:ceiling-light
-    label: ''
-    style:
-      top: 63.11%
-      left: 52.60%
-      transform: scale(1)
-      transformOrigin: top left
-    type: state-icon
-    tap_action:
-      action: toggle
-    hold_action:
-      action: more-info
-  - entity: light.ceiling_light_kitchen_2
-    title: ceiling_light_kitchen_2
-    icon: mdi:ceiling-light
-    label: ''
-    style:
-      top: 63.11%
-      left: 60.99%
-      transform: scale(1)
-      transformOrigin: top left
-    type: state-icon
-    hold_action:
-      action: more-info
-    tap_action:
-      action: toggle
-  - entity: light.ceiling_light_kitchen_3
-    title: ceiling_light_kitchen_3
-    icon: mdi:ceiling-light
-    label: ''
-    style:
-      top: 73.47%
-      left: 52.60%
-      transform: scale(1)
-      transformOrigin: top left
-    type: state-icon
-    tap_action:
-      action: toggle
-    hold_action:
-      action: more-info
-  - entity: light.ceiling_light_kitchen_4
-    title: ceiling_light_kitchen_4
-    icon: mdi:ceiling-light
-    label: ''
-    style:
-      top: 73.47%
-      left: 60.99%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
@@ -294,118 +620,6 @@ elements:
       action: toggle
     hold_action:
       action: more-info
-  - entity: light.lamp_bedroom_1
-    title: lamp_bedroom_1
-    icon: mdi:lamp
-    label: ''
-    style:
-      top: 80.06%
-      left: 69.69%
-      transform: scale(1)
-      transformOrigin: top left
-    type: state-icon
-    tap_action:
-      action: toggle
-    hold_action:
-      action: more-info
-  - entity: light.lamp_bedroom_2
-    title: lamp_bedroom_2
-    icon: mdi:lamp
-    label: ''
-    style:
-      top: 77.86%
-      left: 85.28%
-      transform: scale(1)
-      transformOrigin: top left
-    type: state-icon
-    tap_action:
-      action: toggle
-    hold_action:
-      action: more-info
-  - entity: light.outdoor_lamp_bedroom_1
-    title: outdoor_lamp_bedroom_1
-    icon: mdi:outdoor-lamp
-    label: ''
-    style:
-      top: 54.32%
-      left: 92.10%
-      transform: scale(1)
-      transformOrigin: top left
-    type: state-icon
-    tap_action:
-      action: toggle
-    hold_action:
-      action: more-info
-  - entity: light.outdoor_lamp_bedroom_2
-    title: outdoor_lamp_bedroom_2
-    icon: mdi:outdoor-lamp
-    label: ''
-    style:
-      top: 78.81%
-      left: 96.64%
-      transform: scale(1)
-      transformOrigin: top left
-    type: state-icon
-    tap_action:
-      action: toggle
-    hold_action:
-      action: more-info
-  - entity: light.ceiling_light_bedroom_1
-    title: ceiling_light_bedroom_1
-    icon: mdi:ceiling-light
-    label: ''
-    style:
-      top: 63.11%
-      left: 74.19%
-      transform: scale(1)
-      transformOrigin: top left
-    type: state-icon
-    tap_action:
-      action: toggle
-    hold_action:
-      action: more-info
-  - entity: light.ceiling_light_bedroom_2
-    title: ceiling_light_bedroom_2
-    icon: mdi:ceiling-light
-    label: ''
-    style:
-      top: 63.11%
-      left: 80.32%
-      transform: scale(1)
-      transformOrigin: top left
-    type: state-icon
-    tap_action:
-      action: toggle
-    hold_action:
-      action: more-info
-  - entity: light.ceiling_light_bedroom_3
-    title: ceiling_light_bedroom_3
-    icon: mdi:ceiling-light
-    label: ''
-    style:
-      top: 73.47%
-      left: 74.19%
-      transform: scale(1)
-      transformOrigin: top left
-    type: state-icon
-    tap_action:
-      action: toggle
-    hold_action:
-      action: more-info
-  - entity: light.ceiling_light_bedroom_4
-    title: ceiling_light_bedroom_4
-    icon: mdi:ceiling-light
-    label: ''
-    style:
-      top: 73.47%
-      left: 80.32%
-      transform: scale(1)
-      transformOrigin: top left
-    type: state-icon
-    tap_action:
-      action: toggle
-    hold_action:
-      action: more-info
   - entity: input_boolean.cctv_living_room
     title: cctv_living_room
     icon: mdi:cctv
@@ -422,14 +636,15 @@ elements:
       action: more-info
   - entity: switch.watering_can_living_room
     title: watering_can_living_room
-    icon: mdi:watering-can
+    image: /local/lovelace/watering-can-icon.png
     label: ''
     style:
       top: 29.83%
       left: 74.80%
+      width: 4%
       transform: scale(1)
       transformOrigin: top left
-    type: state-icon
+    type: image
     tap_action:
       action: toggle
     hold_action:
@@ -504,188 +719,6 @@ elements:
       action: toggle
     hold_action:
       action: more-info
-  - entity: light.floor_lamp_living_room
-    title: floor_lamp_living_room
-    icon: mdi:floor-lamp
-    label: ''
-    style:
-      top: 22.92%
-      left: 55.22%
-      transform: scale(1)
-      transformOrigin: top left
-    type: state-icon
-    tap_action:
-      action: toggle
-    hold_action:
-      action: more-info
-  - entity: light.outdoor_lamp_living_room_1
-    title: outdoor_lamp_living_room_1
-    icon: mdi:outdoor-lamp
-    label: ''
-    style:
-      top: 12.56%
-      left: 82.31%
-      transform: scale(1)
-      transformOrigin: top left
-    type: state-icon
-    tap_action:
-      action: toggle
-    hold_action:
-      action: more-info
-  - entity: light.outdoor_lamp_living_room_2
-    title: outdoor_lamp_living_room_2
-    icon: mdi:outdoor-lamp
-    label: ''
-    style:
-      top: 29.83%
-      left: 84.93%
-      transform: scale(1)
-      transformOrigin: top left
-    type: state-icon
-    tap_action:
-      action: toggle
-    hold_action:
-      action: more-info
-  - entity: light.wall_lightbulb_living_room
-    title: wall_lighbulb_living_room
-    icon: mdi:lightbulb
-    label: ''
-    style:
-      top: 16.01%
-      left: 51.90%
-      transform: scale(1)
-      transformOrigin: top left
-    type: state-icon
-    tap_action:
-      action: toggle
-    hold_action:
-      action: more-info
-  - entity: light.led_strip_living_room
-    title: led_strip_living_room
-    icon: mdi:led-strip
-    label: ''
-    style:
-      top: 18.52%
-      left: 77.77%
-      transform: scale(1)
-      transformOrigin: top left
-    type: state-icon
-    tap_action:
-      action: toggle
-    hold_action:
-      action: more-info
-  - entity: light.ceiling_light_living_room_1
-    title: ceiling_light_living_room_1
-    icon: mdi:ceiling-light
-    label: ''
-    style:
-      top: 27.32%
-      left: 52.60%
-      transform: scale(1)
-      transformOrigin: top left
-    type: state-icon
-    tap_action:
-      action: toggle
-    hold_action:
-      action: more-info
-  - entity: light.ceiling_light_living_room_2
-    title: ceiling_light_living_room_2
-    icon: mdi:ceiling-light
-    label: ''
-    style:
-      top: 27.32%
-      left: 58.60%
-      transform: scale(1)
-      transformOrigin: top left
-    type: state-icon
-    tap_action:
-      action: toggle
-    hold_action:
-      action: more-info
-  - entity: light.ceiling_light_living_room_3
-    title: ceiling_light_living_room_3
-    icon: mdi:ceiling-light
-    label: ''
-    style:
-      top: 27.32%
-      left: 64.60%
-      transform: scale(1)
-      transformOrigin: top left
-    type: state-icon
-    tap_action:
-      action: toggle
-    hold_action:
-      action: more-info
-  - entity: light.ceiling_light_living_room_4
-    title: ceiling_light_living_room_4
-    icon: mdi:ceiling-light
-    label: ''
-    style:
-      top: 27.32%
-      left: 70.60%
-      transform: scale(1)
-      transformOrigin: top left
-    type: state-icon
-    tap_action:
-      action: toggle
-    hold_action:
-      action: more-info
-  - entity: light.ceiling_light_living_room_5
-    title: ceiling_light_living_room_5
-    icon: mdi:ceiling-light
-    label: ''
-    style:
-      top: 37.99%
-      left: 52.60%
-      transform: scale(1)
-      transformOrigin: top left
-    type: state-icon
-    tap_action:
-      action: toggle
-    hold_action:
-      action: more-info
-  - entity: light.ceiling_light_living_room_6
-    title: ceiling_light_living_room_6
-    icon: mdi:ceiling-light
-    label: ''
-    style:
-      top: 37.99%
-      left: 58.60%
-      transform: scale(1)
-      transformOrigin: top left
-    type: state-icon
-    tap_action:
-      action: toggle
-    hold_action:
-      action: more-info
-  - entity: light.ceiling_light_living_room_7
-    title: ceiling_light_living_room_7
-    icon: mdi:ceiling-light
-    label: ''
-    style:
-      top: 37.99%
-      left: 64.60%
-      transform: scale(1)
-      transformOrigin: top left
-    type: state-icon
-    tap_action:
-      action: toggle
-    hold_action:
-      action: more-info
-  - entity: light.ceiling_light_living_room_8
-    title: ceiling_light_living_room_8
-    icon: mdi:ceiling-light
-    label: ''
-    style:
-      top: 37.99%
-      left: 70.60%
-      transform: scale(1)
-      transformOrigin: top left
-    type: state-icon
-    tap_action:
-      action: toggle
-    hold_action:
-      action: more-info
   - entity: switch.washing_mashine_bathroom
     title: washing_mashine_bathroom
     icon: mdi:washing-machine
@@ -728,62 +761,6 @@ elements:
       action: toggle
     hold_action:
       action: more-info
-  - entity: light.outdoor_lamp_bathroom
-    title: outdoor_lamp_bathroom
-    icon: mdi:outdoor-lamp
-    label: ''
-    style:
-      top: 3.14%
-      left: 34.08%
-      transform: scale(1)
-      transformOrigin: top left
-    type: state-icon
-    tap_action:
-      action: toggle
-    hold_action:
-      action: more-info
-  - entity: light.mirror_light_bathroom
-    title: mirror_light_bathroom
-    icon: mdi:lightbulb
-    label: ''
-    style:
-      top: 27.94%
-      left: 29.18%
-      transform: scale(1)
-      transformOrigin: top left
-    type: state-icon
-    tap_action:
-      action: toggle
-    hold_action:
-      action: more-info
-  - entity: light.ceiling_light_bathroom_1
-    title: ceiling_light_bathroom_1
-    icon: mdi:ceiling-light
-    label: ''
-    style:
-      top: 21.98%
-      left: 35.82%
-      transform: scale(1)
-      transformOrigin: top left
-    type: state-icon
-    tap_action:
-      action: toggle
-    hold_action:
-      action: more-info
-  - entity: light.ceiling_light_bathroom_2
-    title: ceiling_light_bathroom_2
-    icon: mdi:ceiling-light
-    label: ''
-    style:
-      top: 31.71%
-      left: 35.82%
-      transform: scale(1)
-      transformOrigin: top left
-    type: state-icon
-    tap_action:
-      action: toggle
-    hold_action:
-      action: more-info
   - entity: switch.robot_vacuum
     title: robot_vacuum
     icon: mdi:robot-vacuum
@@ -791,6 +768,90 @@ elements:
     style:
       top: 46.78%
       left: 44.39%
+      transform: scale(1)
+      transformOrigin: top left
+    type: state-icon
+    tap_action:
+      action: toggle
+    hold_action:
+      action: more-info
+  - entity: light.outdoor_lamp_door_1
+    title: outdoor_lamp_door_1
+    icon: mdi:outdoor-lamp
+    label: ''
+    style:
+      top: 56.51%
+      left: 23.94%
+      transform: scale(1)
+      transformOrigin: top left
+    type: state-icon
+    tap_action:
+      action: toggle
+    hold_action:
+      action: more-info
+  - entity: light.outdoor_lamp_bedroom_1
+    title: outdoor_lamp_bedroom_1
+    icon: mdi:outdoor-lamp
+    label: ''
+    style:
+      top: 54.32%
+      left: 92.10%
+      transform: scale(1)
+      transformOrigin: top left
+    type: state-icon
+    tap_action:
+      action: toggle
+    hold_action:
+      action: more-info
+  - entity: light.outdoor_lamp_bedroom_2
+    title: outdoor_lamp_bedroom_2
+    icon: mdi:outdoor-lamp
+    label: ''
+    style:
+      top: 78.81%
+      left: 96.64%
+      transform: scale(1)
+      transformOrigin: top left
+    type: state-icon
+    tap_action:
+      action: toggle
+    hold_action:
+      action: more-info
+  - entity: light.outdoor_lamp_living_room_1
+    title: outdoor_lamp_living_room_1
+    icon: mdi:outdoor-lamp
+    label: ''
+    style:
+      top: 12.56%
+      left: 82.31%
+      transform: scale(1)
+      transformOrigin: top left
+    type: state-icon
+    tap_action:
+      action: toggle
+    hold_action:
+      action: more-info
+  - entity: light.outdoor_lamp_living_room_2
+    title: outdoor_lamp_living_room_2
+    icon: mdi:outdoor-lamp
+    label: ''
+    style:
+      top: 29.83%
+      left: 84.93%
+      transform: scale(1)
+      transformOrigin: top left
+    type: state-icon
+    tap_action:
+      action: toggle
+    hold_action:
+      action: more-info
+  - entity: light.outdoor_lamp_bathroom
+    title: outdoor_lamp_bathroom
+    icon: mdi:outdoor-lamp
+    label: ''
+    style:
+      top: 3.14%
+      left: 34.08%
       transform: scale(1)
       transformOrigin: top left
     type: state-icon
