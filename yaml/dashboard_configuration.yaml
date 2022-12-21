@@ -22,10 +22,9 @@ decluttering_templates:
           ${ vars[2] === 'on' ? "rgba(255, 255, 255, " + (vars[0] / 255) + ")" :
           "none" }
         box-shadow: >-
-          ${ vars[2] === 'on' ? "0 0 30px 10px rgba(255, 255, 255, " + (vars[0]
+          ${ vars[2] === 'on' ? "0 0 20px 12px rgba(255, 255, 255, " + (vars[0]
           / 255) + ") , 0 0 60px 40px rgba(" + vars[1][0] +", " + vars[1][1] +
           ", " + vars[1][2] + ", " + (vars[0] / 255) + ")" : "none" }
-        # mix-blend-mode: screen
   ceiling_light_icon:
     element:
       type: state-icon
@@ -48,6 +47,99 @@ views:
     badges: []
     cards:
       - image: /local/lovelace/house/house.png
+        style: |
+          @-webkit-keyframes custom_up_tv_effect {
+            from {
+              box-shadow:
+                0px -25px 20px -20px rgb(12, 22, 156),
+                0px -25px 40px -40px rgb(114, 11, 173),
+                0px -25px 60px -60px rgb(8, 122, 122);
+            }
+            15% {
+              box-shadow:
+                0px -25px 15px -15px rgb(12, 22, 156),
+                0px -25px 25px -25px rgb(114, 11, 173),
+                0px -25px 35px -35px rgb(8, 122, 122);
+            }
+            30% {
+              box-shadow:
+                0px -25px 20px -20px rgb(8, 122, 122),
+                0px -25px 40px -40px rgb(12, 22, 156),
+                0px -25px 60px -60px rgb(114, 11, 173);
+            }
+            45% {
+              box-shadow:
+                0px -25px 15px -15px rgb(8, 122, 122),
+                0px -25px 25px -25px rgb(12, 22, 156),
+                0px -25px 35px -35px rgb(114, 11, 173);
+            }
+            60% {
+              box-shadow:
+                0px -25px 20px -20px rgb(114, 11, 173),
+                0px -25px 40px -40px rgb(8, 122, 122),
+                0px -25px 60px -60px rgb(12, 22, 156);
+            }
+            99% {
+              box-shadow:
+                0px -25px 15px -15px rgb(114, 11, 173),
+                0px -25px 25px -25px rgb(8, 122, 122),
+                0px -25px 35px -35px rgb(12, 22, 156);
+            }
+            to {
+              box-shadow:
+              0px -25px 15px -15px rgb(12, 22, 156)
+            }
+          }
+          @-webkit-keyframes custom_down_tv_effect {
+            from {
+              box-shadow:
+                0px 34px 20px -20px rgb(12, 22, 156),
+                0px 34px 40px -40px rgb(114, 11, 173),
+                0px 34px 60px -60px rgb(8, 122, 122);
+            }
+            15% {
+              box-shadow:
+                0px 34px 15px -15px rgb(12, 22, 156),
+                0px 34px 25px -25px rgb(114, 11, 173),
+                0px 34px 35px -35px rgb(8, 122, 122);
+            }
+            30% {
+              box-shadow:
+                0px 34px 20px -20px rgb(8, 122, 122),
+                0px 34px 40px -40px rgb(12, 22, 156),
+                0px 34px 60px -60px rgb(114, 11, 173);
+            }
+            45% {
+              box-shadow:
+                0px 34px 15px -15px rgb(8, 122, 122),
+                0px 34px 25px -25px rgb(12, 22, 156),
+                0px 34px 35px -35px rgb(114, 11, 173);
+            }
+            60% {
+              box-shadow:
+                0px 34px 20px -20px rgb(114, 11, 173),
+                0px 34px 40px -40px rgb(8, 122, 122),
+                0px 34px 60px -60px rgb(12, 22, 156);
+            }
+            99% {
+              box-shadow:
+                0px 34px 15px -15px rgb(114, 11, 173),
+                0px 34px 25px -25px rgb(8, 122, 122),
+                0px 34px 35px -35px rgb(12, 22, 156);
+            }
+            to {
+              box-shadow:
+              0px 34px 15px -15px rgb(12, 22, 156)
+            }
+          }
+          @keyframes rotation {
+            0% {
+              transform: rotate(0deg);
+            }
+            100% {
+              transform: rotate(360deg);
+            }
+          }
         elements:
           - type: custom:decluttering-card
             template: light_image
@@ -181,6 +273,32 @@ views:
               - entity: light.ceiling_light_bathroom_2
               - top: 34.16%
               - left: 37.3%
+          - conditions:
+              - entity: switch.tv_living_room
+                state: 'on'
+            elements:
+              - type: image
+                image: /local/lovelace/other/pixel.png
+                style:
+                  top: 56.15%
+                  left: 71.5%
+                  width: 9.3%
+                  animation: custom_up_tv_effect 4s ease-in-out infinite
+                  mix-blend-mode: screen
+            type: conditional
+          - conditions:
+              - entity: switch.tv_bedroom
+                state: 'on'
+            elements:
+              - type: image
+                image: /local/lovelace/other/pixel.png
+                style:
+                  top: 48.4%
+                  left: 78.7%
+                  width: 9.3%
+                  animation: custom_down_tv_effect 5s linear infinite
+                  mix-blend-mode: screen
+            type: conditional
           - conditions:
               - entity: input_select.show_all
                 state: Do not show
@@ -611,20 +729,26 @@ views:
               action: toggle
             hold_action:
               action: more-info
-          - entity: input_boolean.fan_bedroom
-            title: fan_bedroom
-            icon: mdi:fan
-            label: ''
+          - type: custom:config-template-card
+            variables:
+              - states['input_boolean.fan_bedroom'].state
+            entities:
+              - input_boolean.fan_bedroom
+            element:
+              type: state-icon
+              icon: mdi:fan
+              entity: input_boolean.fan_bedroom
+              title: fan_bedroom
+              tap_action:
+                action: toggle
+              hold_action:
+                action: more-info
             style:
               top: 63.42%
               left: 83.18%
               transform: scale(1)
               transformOrigin: center center
-            type: state-icon
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
+              animation: '${ vars[0] === ''on'' ? ''rotation 2s linear infinite'' : ''none'' }'
           - entity: input_boolean.cctv_living_room
             title: cctv_living_room
             icon: mdi:cctv
@@ -710,20 +834,26 @@ views:
               action: toggle
             hold_action:
               action: more-info
-          - entity: input_boolean.fan_living_room
-            title: fan_living_room
-            icon: mdi:fan
-            label: ''
+          - type: custom:config-template-card
+            variables:
+              - states['input_boolean.fan_living_room'].state
+            entities:
+              - input_boolean.fan_living_room
+            element:
+              type: state-icon
+              icon: mdi:fan
+              entity: input_boolean.fan_living_room
+              title: fan_living_room
+              tap_action:
+                action: toggle
+              hold_action:
+                action: more-info
             style:
               top: 23.86%
               left: 51.20%
               transform: scale(1)
               transformOrigin: center center
-            type: state-icon
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
+              animation: '${ vars[0] === ''on'' ? ''rotation 2s linear infinite'' : ''none'' }'
           - entity: switch.washing_mashine_bathroom
             title: washing_mashine_bathroom
             icon: mdi:washing-machine
