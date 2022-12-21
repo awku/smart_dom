@@ -22,10 +22,10 @@ decluttering_templates:
           ${ vars[2] === 'on' ? "rgba(255, 255, 255, " + (vars[0] / 255) + ")" :
           "none" }
         box-shadow: >-
-          ${ vars[2] === 'on' ? "0 0 60px 30px rgba(255, 255, 255, " + (vars[0]
-          / 255) + ") , 0 0 100px 60px rgba(" + vars[1][0] +", " + vars[1][1] +
+          ${ vars[2] === 'on' ? "0 0 30px 10px rgba(255, 255, 255, " + (vars[0]
+          / 255) + ") , 0 0 60px 40px rgba(" + vars[1][0] +", " + vars[1][1] +
           ", " + vars[1][2] + ", " + (vars[0] / 255) + ")" : "none" }
-        mix-blend-mode: screen
+        # mix-blend-mode: screen
   ceiling_light_icon:
     element:
       type: state-icon
@@ -67,6 +67,120 @@ views:
               - entity: light.ceiling_light_hall_3
               - top: 55.2%
               - left: 54%
+          - type: custom:decluttering-card
+            template: light_image
+            variables:
+              - entity: light.ceiling_light_table_kitchen
+              - top: 55.2%
+              - left: 62.4%
+          - type: custom:decluttering-card
+            template: light_image
+            variables:
+              - entity: light.ceiling_light_kitchen_1
+              - top: 65.56%
+              - left: 54.10%
+          - type: custom:decluttering-card
+            template: light_image
+            variables:
+              - entity: light.ceiling_light_kitchen_2
+              - top: 65.56%
+              - left: 62.49%
+          - type: custom:decluttering-card
+            template: light_image
+            variables:
+              - entity: light.ceiling_light_kitchen_3
+              - top: 75.92%
+              - left: 54.10%
+          - type: custom:decluttering-card
+            template: light_image
+            variables:
+              - entity: light.ceiling_light_kitchen_4
+              - top: 75.92%
+              - left: 62.49%
+          - type: custom:decluttering-card
+            template: light_image
+            variables:
+              - entity: light.ceiling_light_bedroom_1
+              - top: 65.56%
+              - left: 75.67%
+          - type: custom:decluttering-card
+            template: light_image
+            variables:
+              - entity: light.ceiling_light_bedroom_2
+              - top: 65.56%
+              - left: 81.80%
+          - type: custom:decluttering-card
+            template: light_image
+            variables:
+              - entity: light.ceiling_light_bedroom_3
+              - top: 75.92%
+              - left: 75.67%
+          - type: custom:decluttering-card
+            template: light_image
+            variables:
+              - entity: light.ceiling_light_bedroom_4
+              - top: 75.92%
+              - left: 81.80%
+          - type: custom:decluttering-card
+            template: light_image
+            variables:
+              - entity: light.ceiling_light_living_room_1
+              - top: 29.77%
+              - left: 54.08%
+          - type: custom:decluttering-card
+            template: light_image
+            variables:
+              - entity: light.ceiling_light_living_room_2
+              - top: 29.77%
+              - left: 60.08%
+          - type: custom:decluttering-card
+            template: light_image
+            variables:
+              - entity: light.ceiling_light_living_room_3
+              - top: 29.77%
+              - left: 66.08%
+          - type: custom:decluttering-card
+            template: light_image
+            variables:
+              - entity: light.ceiling_light_living_room_4
+              - top: 29.77%
+              - left: 72.08%
+          - type: custom:decluttering-card
+            template: light_image
+            variables:
+              - entity: light.ceiling_light_living_room_5
+              - top: 40.44%
+              - left: 54.08%
+          - type: custom:decluttering-card
+            template: light_image
+            variables:
+              - entity: light.ceiling_light_living_room_6
+              - top: 40.44%
+              - left: 60.08%
+          - type: custom:decluttering-card
+            template: light_image
+            variables:
+              - entity: light.ceiling_light_living_room_7
+              - top: 40.44%
+              - left: 66.08%
+          - type: custom:decluttering-card
+            template: light_image
+            variables:
+              - entity: light.ceiling_light_living_room_8
+              - top: 40.44%
+              - left: 72.08%
+          - type: custom:decluttering-card
+            template: light_image
+            variables:
+              - entity: light.ceiling_light_bathroom_1
+              - top: 24.43%
+              - left: 37.3%
+          - type: custom:decluttering-card
+            template: light_image
+            variables:
+              - entity: light.ceiling_light_bathroom_2
+              - top: 34.16%
+              - left: 37.3%
           - conditions:
               - entity: input_select.show_all
                 state: Do not show
