@@ -1,5 +1,28 @@
 image: /local/lovelace/house.png
 elements:
+  - type: custom:config-template-card
+    variables:
+      - states['light.ceiling_light_hall_1'].attributes.brightness
+      - states['light.ceiling_light_hall_1'].attributes.rgb_color
+      - states['light.ceiling_light_hall_1'].state
+    entities:
+      - light.ceiling_light_hall_1
+    element:
+      type: image
+      image: /local/lovelace/pixel.png
+    style:
+      top: 55.2%
+      left: 37.3%
+      transform: scale(1)
+      transformOrigin: center center
+      width: 3px
+      border-radius: 50%
+      background-color: >-
+        ${ vars[2] === 'on' ? "rgba(255, 255, 255, " + (vars[0] / 255) + ")" : "none" }
+      box-shadow: >-
+        ${ vars[2] === 'on' ? "0 0 60px 30px rgba(255, 255, 255, " + (vars[0] / 255) + ") , 0 0
+        100px 60px rgba(" + vars[1][0] +", " + vars[1][1] + ", " +
+        vars[1][2] + ", " + (vars[0] / 255) + ")" : "none" }
   - conditions:
       - entity: input_select.show_all
         state: Do not show
@@ -9,7 +32,7 @@ elements:
           left: 49.85%
           width: 17.55%
           transform: scale(1)
-          transformOrigin: top left
+          transformOrigin: center center
           opacity: 0
         image: /local/lovelace/kitchen.png
         type: image
@@ -18,7 +41,7 @@ elements:
           left: 70.5%
           width: 24.2%
           transform: scale(1)
-          transformOrigin: top left
+          transformOrigin: center center
           opacity: 0
         image: /local/lovelace/bedroom.png
         type: image
@@ -27,7 +50,7 @@ elements:
           left: 29.2%
           width: 17.4%
           transform: scale(1)
-          transformOrigin: top left
+          transformOrigin: center center
           opacity: 0
         image: /local/lovelace/bathroom.png
         type: image
@@ -36,7 +59,7 @@ elements:
           left: 29.2%
           width: 38.25%
           transform: scale(1)
-          transformOrigin: top left
+          transformOrigin: center center
           opacity: 0
         image: /local/lovelace/hall.png
         type: image
@@ -45,7 +68,7 @@ elements:
           left: 43%
           width: 40.14%
           transform: scale(1)
-          transformOrigin: top left
+          transformOrigin: center center
           opacity: 0
         image: /local/lovelace/living-room.png
         type: image
@@ -62,7 +85,7 @@ elements:
           top: 52.75%
           left: 35.82%
           transform: scale(1)
-          transformOrigin: top left
+          transformOrigin: center center
         type: state-icon
         tap_action:
           action: toggle
@@ -76,7 +99,7 @@ elements:
           top: 52.75%
           left: 44.21%
           transform: scale(1)
-          transformOrigin: top left
+          transformOrigin: center center
         type: state-icon
         tap_action:
           action: toggle
@@ -90,7 +113,7 @@ elements:
           top: 52.75%
           left: 52.60%
           transform: scale(1)
-          transformOrigin: top left
+          transformOrigin: center center
         type: state-icon
         tap_action:
           action: toggle
@@ -104,7 +127,7 @@ elements:
           top: 52.75%
           left: 60.99%
           transform: scale(1)
-          transformOrigin: top left
+          transformOrigin: center center
         type: state-icon
         tap_action:
           action: toggle
@@ -118,7 +141,7 @@ elements:
           top: 85.40%
           left: 57.50%
           transform: scale(1)
-          transformOrigin: top left
+          transformOrigin: center center
         type: state-icon
         tap_action:
           action: toggle
@@ -132,7 +155,7 @@ elements:
           top: 63.11%
           left: 52.60%
           transform: scale(1)
-          transformOrigin: top left
+          transformOrigin: center center
         type: state-icon
         tap_action:
           action: toggle
@@ -146,7 +169,7 @@ elements:
           top: 63.11%
           left: 60.99%
           transform: scale(1)
-          transformOrigin: top left
+          transformOrigin: center center
         type: state-icon
         hold_action:
           action: more-info
@@ -160,7 +183,7 @@ elements:
           top: 73.47%
           left: 52.60%
           transform: scale(1)
-          transformOrigin: top left
+          transformOrigin: center center
         type: state-icon
         tap_action:
           action: toggle
@@ -174,7 +197,7 @@ elements:
           top: 73.47%
           left: 60.99%
           transform: scale(1)
-          transformOrigin: top left
+          transformOrigin: center center
         type: state-icon
         tap_action:
           action: toggle
@@ -188,7 +211,7 @@ elements:
           top: 80.06%
           left: 69.69%
           transform: scale(1)
-          transformOrigin: top left
+          transformOrigin: center center
         type: state-icon
         tap_action:
           action: toggle
@@ -202,7 +225,7 @@ elements:
           top: 77.86%
           left: 85.28%
           transform: scale(1)
-          transformOrigin: top left
+          transformOrigin: center center
         type: state-icon
         tap_action:
           action: toggle
@@ -216,7 +239,7 @@ elements:
           top: 63.11%
           left: 74.19%
           transform: scale(1)
-          transformOrigin: top left
+          transformOrigin: center center
         type: state-icon
         tap_action:
           action: toggle
@@ -230,7 +253,7 @@ elements:
           top: 63.11%
           left: 80.32%
           transform: scale(1)
-          transformOrigin: top left
+          transformOrigin: center center
         type: state-icon
         tap_action:
           action: toggle
@@ -244,7 +267,7 @@ elements:
           top: 73.47%
           left: 74.19%
           transform: scale(1)
-          transformOrigin: top left
+          transformOrigin: center center
         type: state-icon
         tap_action:
           action: toggle
@@ -258,7 +281,7 @@ elements:
           top: 73.47%
           left: 80.32%
           transform: scale(1)
-          transformOrigin: top left
+          transformOrigin: center center
         type: state-icon
         tap_action:
           action: toggle
@@ -272,7 +295,7 @@ elements:
           top: 22.92%
           left: 55.22%
           transform: scale(1)
-          transformOrigin: top left
+          transformOrigin: center center
         type: state-icon
         tap_action:
           action: toggle
@@ -286,7 +309,7 @@ elements:
           top: 16.01%
           left: 51.90%
           transform: scale(1)
-          transformOrigin: top left
+          transformOrigin: center center
         type: state-icon
         tap_action:
           action: toggle
@@ -300,7 +323,7 @@ elements:
           top: 18.52%
           left: 77.77%
           transform: scale(1)
-          transformOrigin: top left
+          transformOrigin: center center
         type: state-icon
         tap_action:
           action: toggle
@@ -314,7 +337,7 @@ elements:
           top: 27.32%
           left: 52.60%
           transform: scale(1)
-          transformOrigin: top left
+          transformOrigin: center center
         type: state-icon
         tap_action:
           action: toggle
@@ -328,7 +351,7 @@ elements:
           top: 27.32%
           left: 58.60%
           transform: scale(1)
-          transformOrigin: top left
+          transformOrigin: center center
         type: state-icon
         tap_action:
           action: toggle
@@ -342,7 +365,7 @@ elements:
           top: 27.32%
           left: 64.60%
           transform: scale(1)
-          transformOrigin: top left
+          transformOrigin: center center
         type: state-icon
         tap_action:
           action: toggle
@@ -356,7 +379,7 @@ elements:
           top: 27.32%
           left: 70.60%
           transform: scale(1)
-          transformOrigin: top left
+          transformOrigin: center center
         type: state-icon
         tap_action:
           action: toggle
@@ -370,7 +393,7 @@ elements:
           top: 37.99%
           left: 52.60%
           transform: scale(1)
-          transformOrigin: top left
+          transformOrigin: center center
         type: state-icon
         tap_action:
           action: toggle
@@ -384,7 +407,7 @@ elements:
           top: 37.99%
           left: 58.60%
           transform: scale(1)
-          transformOrigin: top left
+          transformOrigin: center center
         type: state-icon
         tap_action:
           action: toggle
@@ -398,7 +421,7 @@ elements:
           top: 37.99%
           left: 64.60%
           transform: scale(1)
-          transformOrigin: top left
+          transformOrigin: center center
         type: state-icon
         tap_action:
           action: toggle
@@ -412,7 +435,7 @@ elements:
           top: 37.99%
           left: 70.60%
           transform: scale(1)
-          transformOrigin: top left
+          transformOrigin: center center
         type: state-icon
         tap_action:
           action: toggle
@@ -426,7 +449,7 @@ elements:
           top: 27.94%
           left: 29.18%
           transform: scale(1)
-          transformOrigin: top left
+          transformOrigin: center center
         type: state-icon
         tap_action:
           action: toggle
@@ -440,7 +463,7 @@ elements:
           top: 21.98%
           left: 35.82%
           transform: scale(1)
-          transformOrigin: top left
+          transformOrigin: center center
         type: state-icon
         tap_action:
           action: toggle
@@ -454,7 +477,7 @@ elements:
           top: 31.71%
           left: 35.82%
           transform: scale(1)
-          transformOrigin: top left
+          transformOrigin: center center
         type: state-icon
         tap_action:
           action: toggle
@@ -469,7 +492,7 @@ elements:
       left: 6.95%
       width: 5%
       transform: scale(1)
-      transformOrigin: top left
+      transformOrigin: center center
     image: /local/lovelace/see-icon.png
     state_image:
       Show: /local/lovelace/see-icon.png
@@ -488,7 +511,7 @@ elements:
       top: 48.98%
       left: 31.81%
       transform: scale(1)
-      transformOrigin: top left
+      transformOrigin: center center
     type: state-icon
     tap_action:
       action: toggle
@@ -502,7 +525,7 @@ elements:
       top: 33.28%
       left: 23.42%
       transform: scale(1)
-      transformOrigin: top left
+      transformOrigin: center center
     type: state-icon
     tap_action:
       action: toggle
@@ -516,7 +539,7 @@ elements:
       top: 78.18%
       left: 62.56%
       transform: scale(1)
-      transformOrigin: top left
+      transformOrigin: center center
     type: state-icon
     tap_action:
       action: toggle
@@ -530,7 +553,7 @@ elements:
       top: 78.18%
       left: 56.61%
       transform: scale(1)
-      transformOrigin: top left
+      transformOrigin: center center
     type: state-icon
     tap_action:
       action: toggle
@@ -544,7 +567,7 @@ elements:
       top: 82.57%
       left: 83.53%
       transform: scale(1)
-      transformOrigin: top left
+      transformOrigin: center center
     type: state-icon
     tap_action:
       action: toggle
@@ -558,7 +581,7 @@ elements:
       top: 55.01%
       left: 76.89%
       transform: scale(1)
-      transformOrigin: top left
+      transformOrigin: center center
     type: state-icon
     hold_action:
       action: more-info
@@ -572,7 +595,7 @@ elements:
       top: 55.01%
       left: 72.70%
       transform: scale(1)
-      transformOrigin: top left
+      transformOrigin: center center
     type: state-icon
     tap_action:
       action: toggle
@@ -586,7 +609,7 @@ elements:
       top: 74.41%
       left: 91.22%
       transform: scale(1)
-      transformOrigin: top left
+      transformOrigin: center center
     type: state-icon
     tap_action:
       action: toggle
@@ -600,7 +623,7 @@ elements:
       top: 70.02%
       left: 85.63%
       transform: scale(1)
-      transformOrigin: top left
+      transformOrigin: center center
     type: state-icon
     tap_action:
       action: toggle
@@ -614,7 +637,7 @@ elements:
       top: 63.42%
       left: 83.18%
       transform: scale(1)
-      transformOrigin: top left
+      transformOrigin: center center
     type: state-icon
     tap_action:
       action: toggle
@@ -628,7 +651,7 @@ elements:
       top: 45.21%
       left: 85.63%
       transform: scale(1)
-      transformOrigin: top left
+      transformOrigin: center center
     type: state-icon
     tap_action:
       action: toggle
@@ -643,7 +666,7 @@ elements:
       left: 74.80%
       width: 4%
       transform: scale(1)
-      transformOrigin: top left
+      transformOrigin: center center
     type: image
     tap_action:
       action: toggle
@@ -657,7 +680,7 @@ elements:
       top: 43.90%
       left: 69.73%
       transform: scale(1)
-      transformOrigin: top left
+      transformOrigin: center center
     type: state-icon
     tap_action:
       action: toggle
@@ -671,7 +694,7 @@ elements:
       top: 43.90%
       left: 73.57%
       transform: scale(1)
-      transformOrigin: top left
+      transformOrigin: center center
     type: state-icon
     tap_action:
       action: toggle
@@ -685,7 +708,7 @@ elements:
       top: 30.77%
       left: 79.69%
       transform: scale(1)
-      transformOrigin: top left
+      transformOrigin: center center
     type: state-icon
     tap_action:
       action: toggle
@@ -699,7 +722,7 @@ elements:
       top: 37.99%
       left: 76.54%
       transform: scale(1)
-      transformOrigin: top left
+      transformOrigin: center center
     type: state-icon
     tap_action:
       action: toggle
@@ -713,7 +736,7 @@ elements:
       top: 23.86%
       left: 51.20%
       transform: scale(1)
-      transformOrigin: top left
+      transformOrigin: center center
     type: state-icon
     tap_action:
       action: toggle
@@ -727,7 +750,7 @@ elements:
       top: 34.54%
       left: 42.99%
       transform: scale(1)
-      transformOrigin: top left
+      transformOrigin: center center
     type: state-icon
     tap_action:
       action: toggle
@@ -741,7 +764,7 @@ elements:
       top: 28.26%
       left: 39.84%
       transform: scale(1)
-      transformOrigin: top left
+      transformOrigin: center center
     type: state-icon
     tap_action:
       action: toggle
@@ -755,7 +778,7 @@ elements:
       top: 13.81%
       left: 36.35%
       transform: scale(1)
-      transformOrigin: top left
+      transformOrigin: center center
     type: state-icon
     tap_action:
       action: toggle
@@ -769,7 +792,7 @@ elements:
       top: 46.78%
       left: 44.39%
       transform: scale(1)
-      transformOrigin: top left
+      transformOrigin: center center
     type: state-icon
     tap_action:
       action: toggle
@@ -783,7 +806,7 @@ elements:
       top: 56.51%
       left: 23.94%
       transform: scale(1)
-      transformOrigin: top left
+      transformOrigin: center center
     type: state-icon
     tap_action:
       action: toggle
@@ -797,7 +820,7 @@ elements:
       top: 54.32%
       left: 92.10%
       transform: scale(1)
-      transformOrigin: top left
+      transformOrigin: center center
     type: state-icon
     tap_action:
       action: toggle
@@ -811,7 +834,7 @@ elements:
       top: 78.81%
       left: 96.64%
       transform: scale(1)
-      transformOrigin: top left
+      transformOrigin: center center
     type: state-icon
     tap_action:
       action: toggle
@@ -825,7 +848,7 @@ elements:
       top: 12.56%
       left: 82.31%
       transform: scale(1)
-      transformOrigin: top left
+      transformOrigin: center center
     type: state-icon
     tap_action:
       action: toggle
@@ -839,7 +862,7 @@ elements:
       top: 29.83%
       left: 84.93%
       transform: scale(1)
-      transformOrigin: top left
+      transformOrigin: center center
     type: state-icon
     tap_action:
       action: toggle
@@ -853,7 +876,7 @@ elements:
       top: 3.14%
       left: 34.08%
       transform: scale(1)
-      transformOrigin: top left
+      transformOrigin: center center
     type: state-icon
     tap_action:
       action: toggle
