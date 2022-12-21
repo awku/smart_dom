@@ -765,15 +765,14 @@ views:
               action: more-info
           - entity: switch.watering_can_living_room
             title: watering_can_living_room
-            image: /local/lovelace/icon/watering-can-icon.png
+            icon: mdi:watering-can
             label: ''
             style:
               top: 29.83%
               left: 74.80%
-              width: 3%
               transform: scale(1)
               transformOrigin: center center
-            type: image
+            type: state-icon
             tap_action:
               action: toggle
             hold_action:
