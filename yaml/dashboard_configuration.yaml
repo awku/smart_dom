@@ -926,7 +926,7 @@ views:
               action: toggle
             hold_action:
               action: more-info
-          - entity: input_boolean.radiator_bedroom
+          - entity: climate.radiator_bedroom
             title: radiator_bedroom
             icon: mdi:radiator
             label: ''
@@ -1033,7 +1033,7 @@ views:
               action: toggle
             hold_action:
               action: more-info
-          - entity: input_boolean.radiator_living_room
+          - entity: climate.radiator_living_room
             title: radiator_living_room
             icon: mdi:radiator
             label: ''
@@ -1084,7 +1084,7 @@ views:
               action: toggle
             hold_action:
               action: more-info
-          - entity: input_boolean.radiator_bathroom
+          - entity: climate.radiator_bathroom
             title: radiator_bathroom
             icon: mdi:radiator
             label: ''

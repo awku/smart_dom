@@ -33,6 +33,47 @@ lovelace:
 #     humidity_template: '{{ states(''input_number.humidity'') | float }}'
 #     forecast_template: '{{ state_attr(''weather.my_region'', ''forecast'') }}'
 
+climate:
+  - platform: generic_thermostat
+    name: radiator_bedroom
+    heater: input_boolean.radiator_state_bedroom
+    target_sensor: input_number.radiator_temperature_bedroom
+    min_temp: 5
+    max_temp: 25
+    ac_mode: false
+    hot_tolerance: 0.5
+    cold_tolerance: 0.1
+    min_cycle_duration:
+      minutes: 5
+    keep_alive:
+      minutes: 30
+  - platform: generic_thermostat
+    name: radiator_living_room
+    heater: input_boolean.radiator_state_living_room
+    target_sensor: input_number.radiator_temperature_living_room
+    min_temp: 5
+    max_temp: 25
+    ac_mode: false
+    hot_tolerance: 0.5
+    cold_tolerance: 0.1
+    min_cycle_duration:
+      minutes: 5
+    keep_alive:
+      minutes: 30
+  - platform: generic_thermostat
+    name: radiator_bathroom
+    heater: input_boolean.radiator_state_bathroom
+    target_sensor: input_number.radiator_temperature_bathroom
+    min_temp: 5
+    max_temp: 25
+    ac_mode: false
+    hot_tolerance: 0.5
+    cold_tolerance: 0.1
+    min_cycle_duration:
+      minutes: 5
+    keep_alive:
+      minutes: 30
+
 fan:
   - platform: template
     fans:
@@ -362,19 +403,34 @@ input_number:
     name: Humidity
     min: 0
     max: 100
+  radiator_temperature_bedroom:
+    name: Radiator temperature bedroom
+    min: 5
+    max: 25
+    step: 0.5
+  radiator_temperature_living_room:
+    name: Radiator temperature living room
+    min: 5
+    max: 25
+    step: 0.5
+  radiator_temperature_bathroom:
+    name: Radiator temperature bathroom
+    min: 5
+    max: 25
+    step: 0.5
 
 input_boolean:
   fan_state_bedroom:
     name: Fan state bedroom
   fan_state_living_room:
     name: Fan state living room
+  radiator_state_bedroom:
+    name: Radiator state bedroom
+  radiator_state_living_room:
+    name: Radiator state living room
+  radiator_state_bathroom:
+    name: Radiator state bathroom
   cctv_door:
     name: CCTV door
-  radiator_bedroom:
-    name: Radiator bedroom
   cctv_living_room:
     name: CCTV living room
-  radiator_living_room:
-    name: Radiator living room
-  radiator_bathroom:
-    name: Radiator bathroom
