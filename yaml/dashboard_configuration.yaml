@@ -1,5 +1,32 @@
 decluttering_templates:
-  light_image:
+  small_light_image:
+    element:
+      type: custom:config-template-card
+      variables:
+        - states['[[entity]]'].attributes.brightness
+        - states['[[entity]]'].attributes.rgb_color
+        - states['[[entity]]'].state
+      entities:
+        - '[[entity]]'
+      element:
+        type: image
+        image: /local/lovelace/other/pixel.png
+      style:
+        top: '[[top]]'
+        left: '[[left]]'
+        transform: scale(1)
+        transformOrigin: center center
+        width: 3px
+        border-radius: 50%
+        pointer-events: none
+        background-color: >-
+          ${ vars[2] === 'on' ? "rgba(255, 255, 255, " + (vars[0] / 255) + ")" :
+          "none" }
+        box-shadow: >-
+          ${ vars[2] === 'on' ? "0 0 10px 6px rgba(255, 255, 255, " + (vars[0]
+          / 255) + ") , 0 0 20px 20px rgba(" + vars[1][0] +", " + vars[1][1] +
+          ", " + vars[1][2] + ", " + (vars[0] / 255) + ")" : "none" }
+  ceiling_light_image:
     element:
       type: custom:config-template-card
       variables:
@@ -142,138 +169,235 @@ views:
             }
           }
         elements:
+          - conditions:
+              - entity: cover.blinds_bedroom
+                state: closed
+            elements:
+              - type: image
+                image: /local/lovelace/house/bedroom-blinds.png
+                style:
+                  top: 60.936%
+                  left: 84.18%
+                  width: 10.66%
+                  transform: scale(1)
+                  transformOrigin: center center
+                  opacity: 1
+                  pointer-events: none
+            type: conditional
+          - conditions:
+              - entity: cover.blinds_living_room
+                state: closed
+            elements:
+              - type: image
+                image: /local/lovelace/house/living-room-blinds.png
+                style:
+                  top: 16.15%
+                  left: 75.15%
+                  width: 7.925%
+                  transform: scale(1)
+                  transformOrigin: center center
+                  opacity: 1
+                  pointer-events: none
+            type: conditional
+          - conditions:
+              - entity: cover.blinds_bathroom
+                state: closed
+            elements:
+              - type: image
+                image: /local/lovelace/house/bathroom-blinds.png
+                style:
+                  top: 13.5%
+                  left: 34.6%
+                  width: 7.17%
+                  transform: scale(1)
+                  transformOrigin: center center
+                  opacity: 1
+                  pointer-events: none
+            type: conditional
+          - type: custom:config-template-card
+            variables:
+              - states['light.outdoor_lamp_bathroom'].attributes.brightness
+              - states['light.outdoor_lamp_bathroom'].attributes.rgb_color
+              - states['light.outdoor_lamp_bathroom'].state
+            entities:
+              - light.outdoor_lamp_bathroom
+            element:
+              type: image
+              image: /local/lovelace/other/pixel.png
+            style:
+              top: 8.5%
+              left: 34.5%
+              transform: scale(1)
+              transformOrigin: center center
+              width: 3.3%
+              border-radius: 80%
+              pointer-events: none
+              box-shadow: >-
+                ${ vars[2] === 'on' ? "0 -27px 20px 1px rgba(255, 255, 255, " + (vars[0]
+                / 255) + ") , 0 -55px 40px 20px rgba(" + vars[1][0] +", " + vars[1][1] +
+                ", " + vars[1][2] + ", " + (vars[0] / 255) + ")" : "none" }
           - type: custom:decluttering-card
-            template: light_image
+            template: small_light_image
+            variables:
+              - entity: light.mirror_light_bathroom
+              - top: 30.41%
+              - left: 31.18%
+          - type: custom:decluttering-card
+            template: small_light_image
+            variables:
+              - entity: light.wall_lightbulb_living_room
+              - top: 18.01%
+              - left: 53.7%
+          - type: custom:decluttering-card
+            template: small_light_image
+            variables:
+              - entity: light.lamp_bedroom_1
+              - top: 83.06%
+              - left: 70.69%
+          - type: custom:decluttering-card
+            template: small_light_image
+            variables:
+              - entity: light.lamp_bedroom_2
+              - top: 83.06%
+              - left: 85.29%
+          - type: custom:decluttering-card
+            template: small_light_image
+            variables:
+              - entity: light.floor_lamp_living_room
+              - top: 24.92%
+              - left: 57.22%
+          - type: custom:decluttering-card
+            template: ceiling_light_image
             variables:
               - entity: light.ceiling_light_hall_1
               - top: 55.2%
               - left: 37.3%
           - type: custom:decluttering-card
-            template: light_image
+            template: ceiling_light_image
             variables:
               - entity: light.ceiling_light_hall_2
               - top: 55.2%
               - left: 45.7%
           - type: custom:decluttering-card
-            template: light_image
+            template: ceiling_light_image
             variables:
               - entity: light.ceiling_light_hall_3
               - top: 55.2%
               - left: 54%
           - type: custom:decluttering-card
-            template: light_image
+            template: ceiling_light_image
             variables:
               - entity: light.ceiling_light_table_kitchen
               - top: 55.2%
               - left: 62.4%
           - type: custom:decluttering-card
-            template: light_image
+            template: ceiling_light_image
             variables:
               - entity: light.ceiling_light_kitchen_1
               - top: 65.56%
               - left: 54.10%
           - type: custom:decluttering-card
-            template: light_image
+            template: ceiling_light_image
             variables:
               - entity: light.ceiling_light_kitchen_2
               - top: 65.56%
               - left: 62.49%
           - type: custom:decluttering-card
-            template: light_image
+            template: ceiling_light_image
             variables:
               - entity: light.ceiling_light_kitchen_3
               - top: 75.92%
               - left: 54.10%
           - type: custom:decluttering-card
-            template: light_image
+            template: ceiling_light_image
             variables:
               - entity: light.ceiling_light_kitchen_4
               - top: 75.92%
               - left: 62.49%
           - type: custom:decluttering-card
-            template: light_image
+            template: ceiling_light_image
             variables:
               - entity: light.ceiling_light_bedroom_1
               - top: 65.56%
-              - left: 75.67%
+              - left: 77.67%
           - type: custom:decluttering-card
-            template: light_image
+            template: ceiling_light_image
             variables:
               - entity: light.ceiling_light_bedroom_2
               - top: 65.56%
-              - left: 81.80%
+              - left: 83.80%
           - type: custom:decluttering-card
-            template: light_image
+            template: ceiling_light_image
             variables:
               - entity: light.ceiling_light_bedroom_3
               - top: 75.92%
-              - left: 75.67%
+              - left: 77.67%
           - type: custom:decluttering-card
-            template: light_image
+            template: ceiling_light_image
             variables:
               - entity: light.ceiling_light_bedroom_4
               - top: 75.92%
-              - left: 81.80%
+              - left: 83.80%
           - type: custom:decluttering-card
-            template: light_image
+            template: ceiling_light_image
             variables:
               - entity: light.ceiling_light_living_room_1
               - top: 29.77%
               - left: 54.08%
           - type: custom:decluttering-card
-            template: light_image
+            template: ceiling_light_image
             variables:
               - entity: light.ceiling_light_living_room_2
               - top: 29.77%
               - left: 60.08%
           - type: custom:decluttering-card
-            template: light_image
+            template: ceiling_light_image
             variables:
               - entity: light.ceiling_light_living_room_3
               - top: 29.77%
               - left: 66.08%
           - type: custom:decluttering-card
-            template: light_image
+            template: ceiling_light_image
             variables:
               - entity: light.ceiling_light_living_room_4
               - top: 29.77%
               - left: 72.08%
           - type: custom:decluttering-card
-            template: light_image
+            template: ceiling_light_image
             variables:
               - entity: light.ceiling_light_living_room_5
               - top: 40.44%
               - left: 54.08%
           - type: custom:decluttering-card
-            template: light_image
+            template: ceiling_light_image
             variables:
               - entity: light.ceiling_light_living_room_6
               - top: 40.44%
               - left: 60.08%
           - type: custom:decluttering-card
-            template: light_image
+            template: ceiling_light_image
             variables:
               - entity: light.ceiling_light_living_room_7
               - top: 40.44%
               - left: 66.08%
           - type: custom:decluttering-card
-            template: light_image
+            template: ceiling_light_image
             variables:
               - entity: light.ceiling_light_living_room_8
               - top: 40.44%
               - left: 72.08%
           - type: custom:decluttering-card
-            template: light_image
+            template: ceiling_light_image
             variables:
               - entity: light.ceiling_light_bathroom_1
-              - top: 24.43%
-              - left: 37.3%
+              - top: 22.43%
+              - left: 35.3%
           - type: custom:decluttering-card
-            template: light_image
+            template: ceiling_light_image
             variables:
               - entity: light.ceiling_light_bathroom_2
-              - top: 34.16%
-              - left: 37.3%
+              - top: 32.16%
+              - left: 35.3%
           - conditions:
               - entity: switch.tv_living_room
                 state: 'on'
@@ -313,43 +437,124 @@ views:
                   transform: scale(1)
                   transformOrigin: center center
                   opacity: 0
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+                entity: light.kitchen_lights_group
                 image: /local/lovelace/house/kitchen.png
                 type: image
               - style:
-                  top: 55.9%
-                  left: 70.5%
-                  width: 24.2%
+                  top: 42.9%
+                  left: 55.85%
+                  width: 11.46%
                   transform: scale(1)
                   transformOrigin: center center
                   opacity: 0
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+                entity: light.kitchen_lights_group
+                image: /local/lovelace/house/kitchen-2.png
+                type: image
+              - style:
+                  top: 56.17%
+                  left: 70.65%
+                  width: 24.19%
+                  transform: scale(1)
+                  transformOrigin: center center
+                  opacity: 0
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+                entity: light.bedroom_lights_group
                 image: /local/lovelace/house/bedroom.png
                 type: image
               - style:
                   top: 12%
                   left: 29.2%
-                  width: 17.4%
+                  width: 12.45%
                   transform: scale(1)
                   transformOrigin: center center
                   opacity: 0
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+                entity: light.bathroom_lights_group
                 image: /local/lovelace/house/bathroom.png
+                type: image
+              - style:
+                  top: 32%
+                  left: 41.5%
+                  width: 4.95%
+                  transform: scale(1)
+                  transformOrigin: center center
+                  opacity: 0
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+                entity: light.bathroom_lights_group
+                image: /local/lovelace/house/bathroom-2.png
                 type: image
               - style:
                   top: 43.1%
                   left: 29.2%
-                  width: 38.25%
+                  width: 26.79%
                   transform: scale(1)
                   transformOrigin: center center
                   opacity: 0
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+                entity: light.hall_lights_group
                 image: /local/lovelace/house/hall.png
                 type: image
               - style:
-                  top: 12%
+                  top: 11.9%
                   left: 43%
                   width: 40.14%
                   transform: scale(1)
                   transformOrigin: center center
                   opacity: 0
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+                entity: light.living_room_lights_group
                 image: /local/lovelace/house/living-room.png
+                type: image
+              - style:
+                  top: 29.9%
+                  left: 48%
+                  width: 35.18%
+                  transform: scale(1)
+                  transformOrigin: center center
+                  opacity: 0
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+                entity: light.living_room_lights_group
+                image: /local/lovelace/house/living-room-2.png
+                type: image
+              - style:
+                  top: 43%
+                  left: 67.4%
+                  width: 15.71%
+                  transform: scale(1)
+                  transformOrigin: center center
+                  opacity: 0
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+                entity: light.living_room_lights_group
+                image: /local/lovelace/house/living-room-3.png
                 type: image
             type: conditional
           - conditions:
@@ -451,25 +656,25 @@ views:
                 variables:
                   - entity: light.ceiling_light_bedroom_1
                   - top: 63.11%
-                  - left: 74.19%
+                  - left: 76.19%
               - type: custom:decluttering-card
                 template: ceiling_light_icon
                 variables:
                   - entity: light.ceiling_light_bedroom_2
                   - top: 63.11%
-                  - left: 80.32%
+                  - left: 82.32%
               - type: custom:decluttering-card
                 template: ceiling_light_icon
                 variables:
                   - entity: light.ceiling_light_bedroom_3
                   - top: 73.47%
-                  - left: 74.19%
+                  - left: 76.19%
               - type: custom:decluttering-card
                 template: ceiling_light_icon
                 variables:
                   - entity: light.ceiling_light_bedroom_4
                   - top: 73.47%
-                  - left: 80.32%
+                  - left: 82.32%
               - entity: light.floor_lamp_living_room
                 title: floor_lamp_living_room
                 icon: mdi:floor-lamp
@@ -490,7 +695,7 @@ views:
                 label: ''
                 style:
                   top: 16.01%
-                  left: 51.90%
+                  left: 51.70%
                   transform: scale(1)
                   transformOrigin: center center
                 type: state-icon
@@ -578,34 +783,37 @@ views:
                 template: ceiling_light_icon
                 variables:
                   - entity: light.ceiling_light_bathroom_1
-                  - top: 21.98%
-                  - left: 35.82%
+                  - top: 19.98%
+                  - left: 33.82%
               - type: custom:decluttering-card
                 template: ceiling_light_icon
                 variables:
                   - entity: light.ceiling_light_bathroom_2
-                  - top: 31.71%
-                  - left: 35.82%
+                  - top: 29.71%
+                  - left: 33.82%
             type: conditional
-          - entity: input_select.show_all
-            title: view
-            label: ''
+          - type: custom:config-template-card
+            variables:
+              - states['input_select.show_all'].state
+            entities:
+              - input_select.show_all
+            element:
+              entity: input_select.show_all
+              title: view
+              label: ''
+              type: state-icon
+              icon: '${ vars[0] === ''Show'' ? ''mdi:eye'' : ''mdi:eye-off'' }'
+              tap_action:
+                action: call-service
+                service: input_select.select_next
+                service_data:
+                  entity_id: input_select.show_all
             style:
               top: 21.35%
               left: 6.95%
               width: 5%
               transform: scale(1)
               transformOrigin: center center
-            image: /local/lovelace/icon/see-icon.png
-            state_image:
-              Show: /local/lovelace/icon/see-icon.png
-              Do not show: /local/lovelace/icon/blind-icon.png
-            tap_action:
-              action: call-service
-              service: input_select.select_next
-              service_data:
-                entity_id: input_select.show_all
-            type: image
           - entity: switch.lock_door
             title: lock_door
             icon: mdi:lock
@@ -734,24 +942,27 @@ views:
               action: more-info
           - type: custom:config-template-card
             variables:
-              - states['input_boolean.fan_bedroom'].state
+              - states['fan.fan_bedroom'].state
+              - states['fan.fan_bedroom'].attributes.percentage
             entities:
-              - input_boolean.fan_bedroom
+              - fan.fan_bedroom
             element:
               type: state-icon
               icon: mdi:fan
-              entity: input_boolean.fan_bedroom
+              entity: fan.fan_bedroom
               title: fan_bedroom
               tap_action:
                 action: toggle
               hold_action:
                 action: more-info
             style:
-              top: 63.42%
-              left: 83.18%
+              top: 64.42%
+              left: 84.18%
               transform: scale(1)
               transformOrigin: center center
-              animation: '${ vars[0] === ''on'' ? ''rotation 2s linear infinite'' : ''none'' }'
+              animation: >-
+                ${ vars[0] === 'on' ? 'rotation '+100/vars[1]+'s linear
+                infinite' : 'none' }
           - entity: input_boolean.cctv_living_room
             title: cctv_living_room
             icon: mdi:cctv
@@ -838,13 +1049,14 @@ views:
               action: more-info
           - type: custom:config-template-card
             variables:
-              - states['input_boolean.fan_living_room'].state
+              - states['fan.fan_living_room'].state
+              - states['fan.fan_living_room'].attributes.percentage
             entities:
-              - input_boolean.fan_living_room
+              - fan.fan_living_room
             element:
               type: state-icon
               icon: mdi:fan
-              entity: input_boolean.fan_living_room
+              entity: fan.fan_living_room
               title: fan_living_room
               tap_action:
                 action: toggle
@@ -855,7 +1067,9 @@ views:
               left: 51.20%
               transform: scale(1)
               transformOrigin: center center
-              animation: '${ vars[0] === ''on'' ? ''rotation 2s linear infinite'' : ''none'' }'
+              animation: >-
+                ${ vars[0] === 'on' ? 'rotation '+100/vars[1]+'s linear
+                infinite' : 'none' }
           - entity: switch.washing_mashine_bathroom
             title: washing_mashine_bathroom
             icon: mdi:washing-machine
@@ -996,4 +1210,14 @@ views:
               action: toggle
             hold_action:
               action: more-info
+          - type: image
+            image: /local/lovelace/house/house-border.svg
+            style:
+              top: 0
+              left: 0
+              width: 100%
+              transform: scale(1)
+              transformOrigin: center center
+              opacity: 1
+              pointer-events: none
         type: picture-elements
