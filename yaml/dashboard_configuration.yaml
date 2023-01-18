@@ -214,6 +214,51 @@ views:
                   opacity: 1
                   pointer-events: none
             type: conditional
+          - type: state-label
+            entity: input_number.radiator_temperature_bathroom
+            suffix: °C
+            style:
+              top: 12%
+              left: 29%
+              color: rgb(255,255,255)
+              font-family: Poppins
+              font-weight: 100
+              font-size: 230%
+              transform: rotate(0deg)
+              background-color: rgba(0,0,0,.0)
+              border-radius: 50%
+              text-align: center
+              pointer-events: none
+          - type: state-label
+            entity: input_number.radiator_temperature_living_room
+            suffix: °C
+            style:
+              top: 12%
+              left: 70%
+              color: rgb(255,255,255)
+              font-family: Poppins
+              font-weight: 100
+              font-size: 230%
+              transform: rotate(0deg)
+              background-color: rgba(0,0,0,.0)
+              border-radius: 50%
+              text-align: center
+              pointer-events: none
+          - type: state-label
+            entity: input_number.radiator_temperature_bedroom
+            suffix: °C
+            style:
+              top: 90.9%
+              left: 70.3%
+              color: rgb(255,255,255)
+              font-family: Poppins
+              font-weight: 100
+              font-size: 230%
+              transform: rotate(0deg)
+              background-color: rgba(0,0,0,.0)
+              border-radius: 50%
+              text-align: center
+              pointer-events: none
           - type: custom:config-template-card
             variables:
               - states['light.outdoor_lamp_bathroom'].attributes.brightness
@@ -226,15 +271,125 @@ views:
               image: /local/lovelace/other/pixel.png
             style:
               top: 8.5%
-              left: 34.5%
+              left: 34.1%
               transform: scale(1)
               transformOrigin: center center
-              width: 3.3%
-              border-radius: 80%
+              width: 2.5%
+              border-radius: 50%
               pointer-events: none
               box-shadow: >-
-                ${ vars[2] === 'on' ? "0 -27px 20px 1px rgba(255, 255, 255, " + (vars[0]
-                / 255) + ") , 0 -55px 40px 20px rgba(" + vars[1][0] +", " + vars[1][1] +
+                ${ vars[2] === 'on' ? "0 -30px 20px 1px rgba(255, 255, 255, " + (vars[0]
+                / 255) + ") , 0 -59px 40px 20px rgba(" + vars[1][0] +", " + vars[1][1] +
+                ", " + vars[1][2] + ", " + (vars[0] / 255) + ")" : "none" }
+          - type: custom:config-template-card
+            variables:
+              - states['light.outdoor_lamp_door_1'].attributes.brightness
+              - states['light.outdoor_lamp_door_1'].attributes.rgb_color
+              - states['light.outdoor_lamp_door_1'].state
+            entities:
+              - light.outdoor_lamp_door_1
+            element:
+              type: image
+              image: /local/lovelace/other/pixel.png
+            style:
+              top: 56.51%
+              left: 27.5%
+              transform: scale(1)
+              transformOrigin: center center
+              width: 2.5%
+              border-radius: 20%
+              pointer-events: none
+              box-shadow: >-
+                ${ vars[2] === 'on' ? "-30px 0 20px 1px rgba(255, 255, 255, " + (vars[0]
+                / 255) + ") , -59px 0 40px 20px rgba(" + vars[1][0] +", " + vars[1][1] +
+                ", " + vars[1][2] + ", " + (vars[0] / 255) + ")" : "none" }
+          - type: custom:config-template-card
+            variables:
+              - states['light.outdoor_lamp_living_room_1'].attributes.brightness
+              - states['light.outdoor_lamp_living_room_1'].attributes.rgb_color
+              - states['light.outdoor_lamp_living_room_1'].state
+            entities:
+              - light.outdoor_lamp_living_room_1
+            element:
+              type: image
+              image: /local/lovelace/other/pixel.png
+            style:
+              top: 16.56%
+              left: 79.31%
+              transform: scale(1)
+              transformOrigin: center center
+              width: 2.5%
+              border-radius: 20%
+              pointer-events: none
+              box-shadow: >-
+                ${ vars[2] === 'on' ? "30px -30px 20px 1px rgba(255, 255, 255, " + (vars[0]
+                / 255) + ") , 59px -59px 40px 20px rgba(" + vars[1][0] +", " + vars[1][1] +
+                ", " + vars[1][2] + ", " + (vars[0] / 255) + ")" : "none" }
+          - type: custom:config-template-card
+            variables:
+              - states['light.outdoor_lamp_living_room_2'].attributes.brightness
+              - states['light.outdoor_lamp_living_room_2'].attributes.rgb_color
+              - states['light.outdoor_lamp_living_room_2'].state
+            entities:
+              - light.outdoor_lamp_living_room_2
+            element:
+              type: image
+              image: /local/lovelace/other/pixel.png
+            style:
+              top: 29.83%
+              left: 81.8%
+              transform: scale(1)
+              transformOrigin: center center
+              width: 2.5%
+              border-radius: 20%
+              pointer-events: none
+              box-shadow: >-
+                ${ vars[2] === 'on' ? "30px 0 20px 1px rgba(255, 255, 255, " + (vars[0]
+                / 255) + ") , 59px 0 40px 20px rgba(" + vars[1][0] +", " + vars[1][1] +
+                ", " + vars[1][2] + ", " + (vars[0] / 255) + ")" : "none" }
+          - type: custom:config-template-card
+            variables:
+              - states['light.outdoor_lamp_bedroom_1'].attributes.brightness
+              - states['light.outdoor_lamp_bedroom_1'].attributes.rgb_color
+              - states['light.outdoor_lamp_bedroom_1'].state
+            entities:
+              - light.outdoor_lamp_bedroom_1
+            element:
+              type: image
+              image: /local/lovelace/other/pixel.png
+            style:
+              top: 58.12%
+              left: 89.65%
+              transform: scale(1)
+              transformOrigin: center center
+              width: 2.5%
+              border-radius: 20%
+              pointer-events: none
+              box-shadow: >-
+                ${ vars[2] === 'on' ? "30px -30px 20px 1px rgba(255, 255, 255, " + (vars[0]
+                / 255) + ") , 59px -59px 40px 20px rgba(" + vars[1][0] +", " + vars[1][1] +
+                ", " + vars[1][2] + ", " + (vars[0] / 255) + ")" : "none" }
+          - type: custom:config-template-card
+            variables:
+              - states['light.outdoor_lamp_bedroom_2'].attributes.brightness
+              - states['light.outdoor_lamp_bedroom_2'].attributes.rgb_color
+              - states['light.outdoor_lamp_bedroom_2'].state
+            entities:
+              - light.outdoor_lamp_bedroom_2
+            element:
+              type: image
+              image: /local/lovelace/other/pixel.png
+            style:
+              top: 78.81%
+              left: 93.64%
+              transform: scale(1)
+              transformOrigin: center center
+              width: 2.5%
+              border-radius: 20%
+              pointer-events: none
+              box-shadow: >-
+                ${ vars[2] === 'on' ? "30px 0 20px 1px rgba(255, 255, 255, " + (vars[0]
+                / 255) + ") , 59px 0 40px 20px rgba(" + vars[1][0] +", " + vars[1][1] +
                 ", " + vars[1][2] + ", " + (vars[0] / 255) + ")" : "none" }
           - type: custom:decluttering-card
             template: small_light_image
