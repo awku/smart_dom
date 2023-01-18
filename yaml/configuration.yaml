@@ -375,9 +375,9 @@ input_select:
   show_all:
     name: Show all settings
     options:
-      - Show
-      - Do not show
-    initial: Show
+      - Show light icons
+      - Do not show light icons
+    initial: Show light icons
 
 input_number:
   fan_percentage_bedroom:

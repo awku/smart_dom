@@ -218,16 +218,14 @@ views:
             entity: input_select.show_all
             style:
               top: 8%
-              left: 8.7%
-              color: rgb(255,255,255)
+              left: 5.5%
               font-family: Poppins
               font-weight: 100
               font-size: 170%
               transform: rotate(0deg)
-              background-color: rgba(0,0,0,.0)
               border-radius: 50%
               text-align: center
-              width: 10%
+              width: 17%
             tap_action:
               action: call-service
               service: input_select.select_next
@@ -268,7 +266,6 @@ views:
               font-weight: 100
               font-size: 230%
               transform: rotate(0deg)
-              background-color: rgba(0,0,0,.0)
               border-radius: 50%
               text-align: center
               pointer-events: none
@@ -283,7 +280,6 @@ views:
               font-weight: 100
               font-size: 230%
               transform: rotate(0deg)
-              background-color: rgba(0,0,0,.0)
               border-radius: 50%
               text-align: center
               pointer-events: none
@@ -298,7 +294,6 @@ views:
               font-weight: 100
               font-size: 230%
               transform: rotate(0deg)
-              background-color: rgba(0,0,0,.0)
               border-radius: 50%
               text-align: center
               pointer-events: none
@@ -320,12 +315,10 @@ views:
             style:
               top: 45%
               left: 3.2%
-              color: rgb(255,255,255)
               font-family: Poppins
               font-weight: 100
               font-size: 100%
               transform: rotate(0deg)
-              background-color: rgba(0,0,0,.0)
               border-radius: 50%
               text-align: center
             tap_action:
@@ -348,12 +341,10 @@ views:
             style:
               top: 45%
               left: 14.5%
-              color: rgb(255,255,255)
               font-family: Poppins
               font-weight: 100
               font-size: 100%
               transform: rotate(0deg)
-              background-color: rgba(0,0,0,.0)
               border-radius: 50%
               text-align: center
             tap_action:
@@ -376,12 +367,10 @@ views:
             style:
               top: 55%
               left: 2.6%
-              color: rgb(255,255,255)
               font-family: Poppins
               font-weight: 100
               font-size: 100%
               transform: rotate(0deg)
-              background-color: rgba(0,0,0,.0)
               border-radius: 50%
               text-align: center
             tap_action:
@@ -404,12 +393,10 @@ views:
             style:
               top: 55%
               left: 15.1%
-              color: rgb(255,255,255)
               font-family: Poppins
               font-weight: 100
               font-size: 100%
               transform: rotate(0deg)
-              background-color: rgba(0,0,0,.0)
               border-radius: 50%
               text-align: center
             tap_action:
@@ -796,7 +783,7 @@ views:
             type: conditional
           - conditions:
               - entity: input_select.show_all
-                state: Do not show
+                state: Do not show light icons
             elements:
               - style:
                   top: 65.9%
@@ -927,7 +914,7 @@ views:
             type: conditional
           - conditions:
               - entity: input_select.show_all
-                state: Show
+                state: Show light icons
             elements:
               - type: custom:decluttering-card
                 template: ceiling_light_icon
