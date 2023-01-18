@@ -218,7 +218,7 @@ views:
             entity: input_select.show_all
             style:
               top: 8%
-              left: 8%
+              left: 8.7%
               color: rgb(255,255,255)
               font-family: Poppins
               font-weight: 100
@@ -227,6 +227,7 @@ views:
               background-color: rgba(0,0,0,.0)
               border-radius: 50%
               text-align: center
+              width: 10%
             tap_action:
               action: call-service
               service: input_select.select_next
@@ -236,7 +237,7 @@ views:
             entity: climate.radiator_living_room
             name: Main
             style:
-              top: 25%
+              top: 24%
               left: 5%
               width: 8.5%
               font-family: Poppins
@@ -244,7 +245,7 @@ views:
             entity: climate.radiator_bedroom
             name: Bedroom
             style:
-              top: 25%
+              top: 24%
               left: 13.5%
               width: 8.5%
               font-family: Poppins
@@ -252,7 +253,7 @@ views:
             entity: climate.radiator_bathroom
             name: Bathroom
             style:
-              top: 25%
+              top: 24%
               left: 22%
               width: 8.5%
               font-family: Poppins
@@ -301,6 +302,118 @@ views:
               border-radius: 50%
               text-align: center
               pointer-events: none
+          - type: state-icon
+            entity: switch.watering_can_bedroom
+            icon: mdi:flower-tulip
+            title: watering_can_bedroom
+            style:
+              top: 40%
+              transform: scale(2,2)
+              left: 6.5%
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+          - type: state-label
+            entity: switch.watering_can_bedroom
+            prefix: "Bedroom Water "
+            style:
+              top: 45%
+              left: 3.2%
+              color: rgb(255,255,255)
+              font-family: Poppins
+              font-weight: 100
+              font-size: 100%
+              transform: rotate(0deg)
+              background-color: rgba(0,0,0,.0)
+              border-radius: 50%
+              text-align: center
+            tap_action:
+              action: toggle
+          - type: state-icon
+            entity: switch.watering_can_living_room
+            icon: mdi:flower
+            title: watering_can_bedroom
+            style:
+              top: 40%
+              transform: scale(2,2)
+              left: 18.5%
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+          - type: state-label
+            entity: switch.watering_can_living_room
+            prefix: "Living Room Water "
+            style:
+              top: 45%
+              left: 14.5%
+              color: rgb(255,255,255)
+              font-family: Poppins
+              font-weight: 100
+              font-size: 100%
+              transform: rotate(0deg)
+              background-color: rgba(0,0,0,.0)
+              border-radius: 50%
+              text-align: center
+            tap_action:
+              action: toggle
+          - type: state-icon
+            entity: switch.washing_mashine_bathroom
+            icon: mdi:washing-machine
+            title: washing_mashine_bathroom
+            style:
+              top: 50%
+              transform: scale(2,2)
+              left: 6.5%
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+          - type: state-label
+            entity: switch.washing_mashine_bathroom
+            prefix: "Washing Machine "
+            style:
+              top: 55%
+              left: 2.6%
+              color: rgb(255,255,255)
+              font-family: Poppins
+              font-weight: 100
+              font-size: 100%
+              transform: rotate(0deg)
+              background-color: rgba(0,0,0,.0)
+              border-radius: 50%
+              text-align: center
+            tap_action:
+              action: toggle
+          - type: state-icon
+            entity: switch.robot_vacuum
+            icon: mdi:robot-vacuum
+            title: robot_vacuum
+            style:
+              top: 50%
+              transform: scale(2,2)
+              left: 18.5%
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+          - type: state-label
+            entity: switch.robot_vacuum
+            prefix: "Robot Vacuum "
+            style:
+              top: 55%
+              left: 15.1%
+              color: rgb(255,255,255)
+              font-family: Poppins
+              font-weight: 100
+              font-size: 100%
+              transform: rotate(0deg)
+              background-color: rgba(0,0,0,.0)
+              border-radius: 50%
+              text-align: center
+            tap_action:
+              action: toggle
           - type: custom:config-template-card
             variables:
               - states['light.led_strip_kitchen'].attributes.brightness
@@ -897,8 +1010,8 @@ views:
                 icon: mdi:lamp
                 label: ''
                 style:
-                  top: 77.86%
-                  left: 85.28%
+                  top: 80.06%
+                  left: 84.4%
                   transform: scale(1)
                   transformOrigin: center center
                 type: state-icon
@@ -1103,20 +1216,6 @@ views:
               action: toggle
             hold_action:
               action: more-info
-          - entity: switch.watering_can_bedroom
-            title: watering_can_bedroom
-            icon: mdi:watering-can
-            label: ''
-            style:
-              top: 82.57%
-              left: 83.53%
-              transform: scale(1)
-              transformOrigin: center center
-            type: state-icon
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
           - entity: switch.tv_bedroom
             title: tv_bedroom
             icon: mdi:television
@@ -1196,20 +1295,6 @@ views:
               action: toggle
             hold_action:
               action: more-info
-          - entity: switch.watering_can_living_room
-            title: watering_can_living_room
-            icon: mdi:watering-can
-            label: ''
-            style:
-              top: 29.83%
-              left: 74.80%
-              transform: scale(1)
-              transformOrigin: center center
-            type: state-icon
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
           - entity: switch.tv_living_room
             title: tv_living_room
             icon: mdi:television
@@ -1275,20 +1360,6 @@ views:
               animation: >-
                 ${ vars[0] === 'on' ? 'rotation '+100/vars[1]+'s linear
                 infinite' : 'none' }
-          - entity: switch.washing_mashine_bathroom
-            title: washing_mashine_bathroom
-            icon: mdi:washing-machine
-            label: ''
-            style:
-              top: 34.54%
-              left: 42.99%
-              transform: scale(1)
-              transformOrigin: center center
-            type: state-icon
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
           - entity: cover.blinds_bathroom
             title: blinds_bathroom
             icon: mdi:blinds
@@ -1296,20 +1367,6 @@ views:
             style:
               top: 13.81%
               left: 36.35%
-              transform: scale(1)
-              transformOrigin: center center
-            type: state-icon
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
-          - entity: switch.robot_vacuum
-            title: robot_vacuum
-            icon: mdi:robot-vacuum
-            label: ''
-            style:
-              top: 46.78%
-              left: 44.39%
               transform: scale(1)
               transformOrigin: center center
             type: state-icon
