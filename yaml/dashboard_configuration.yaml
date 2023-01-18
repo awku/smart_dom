@@ -215,6 +215,48 @@ views:
                   pointer-events: none
             type: conditional
           - type: state-label
+            entity: input_select.show_all
+            style:
+              top: 8%
+              left: 8%
+              color: rgb(255,255,255)
+              font-family: Poppins
+              font-weight: 100
+              font-size: 170%
+              transform: rotate(0deg)
+              background-color: rgba(0,0,0,.0)
+              border-radius: 50%
+              text-align: center
+            tap_action:
+              action: call-service
+              service: input_select.select_next
+              service_data:
+                entity_id: input_select.show_all
+          - type: custom:hui-thermostat-card
+            entity: climate.radiator_living_room
+            name: Main
+            style:
+              top: 25%
+              left: 5%
+              width: 8.5%
+              font-family: Poppins
+          - type: custom:hui-thermostat-card
+            entity: climate.radiator_bedroom
+            name: Bedroom
+            style:
+              top: 25%
+              left: 13.5%
+              width: 8.5%
+              font-family: Poppins
+          - type: custom:hui-thermostat-card
+            entity: climate.radiator_bathroom
+            name: Bathroom
+            style:
+              top: 25%
+              left: 22%
+              width: 8.5%
+              font-family: Poppins
+          - type: state-label
             entity: input_number.radiator_temperature_bathroom
             suffix: °C
             style:
@@ -259,6 +301,64 @@ views:
               border-radius: 50%
               text-align: center
               pointer-events: none
+          - type: custom:config-template-card
+            variables:
+              - states['light.led_strip_kitchen'].attributes.brightness
+              - states['light.led_strip_kitchen'].attributes.rgb_color
+              - states['light.led_strip_kitchen'].state
+            entities:
+              - light.led_strip_kitchen
+            element:
+              type: image
+              image: /local/lovelace/other/pixel.png
+            style:
+              top: 88%
+              left: 50.50%
+              transform: scale(1)
+              transformOrigin: center center
+              width: 17.55%
+              pointer-events: none
+              box-shadow: >-
+                ${ vars[2] === 'on' ? "0px -25px 20px -20px rgba(" + vars[1][0] +", " + vars[1][1] +
+                ", " + vars[1][2] + ", " + (vars[0] / 255) + ")" : "none" }
+          - type: custom:config-template-card
+            variables:
+              - states['light.led_strip_living_room'].attributes.brightness
+              - states['light.led_strip_living_room'].attributes.rgb_color
+              - states['light.led_strip_living_room'].state
+            entities:
+              - light.led_strip_living_room
+            element:
+              type: image
+              image: /local/lovelace/other/pixel.png
+            style:
+              top: 1%
+              left: 78.3%
+              transform: rotate(-135deg)
+              width: 10.55%
+              pointer-events: none
+              box-shadow: >-
+                ${ vars[2] === 'on' ? "0px -25px 20px -20px rgba(" + vars[1][0] +", " + vars[1][1] +
+                ", " + vars[1][2] + ", " + (vars[0] / 255) + ")" : "none" }
+          - type: custom:config-template-card
+            variables:
+              - states['light.led_strip_living_room'].attributes.brightness
+              - states['light.led_strip_living_room'].attributes.rgb_color
+              - states['light.led_strip_living_room'].state
+            entities:
+              - light.led_strip_living_room
+            element:
+              type: image
+              image: /local/lovelace/other/pixel.png
+            style:
+              top: 20%
+              left: 82.9%
+              transform: rotate(-90deg)
+              width: 19.55%
+              pointer-events: none
+              box-shadow: >-
+                ${ vars[2] === 'on' ? "0px -25px 20px -20px rgba(" + vars[1][0] +", " + vars[1][1] +
+                ", " + vars[1][2] + ", " + (vars[0] / 255) + ")" : "none" }
           - type: custom:config-template-card
             variables:
               - states['light.outdoor_lamp_bathroom'].attributes.brightness
@@ -947,28 +1047,6 @@ views:
                   - top: 29.71%
                   - left: 33.82%
             type: conditional
-          - type: custom:config-template-card
-            variables:
-              - states['input_select.show_all'].state
-            entities:
-              - input_select.show_all
-            element:
-              entity: input_select.show_all
-              title: view
-              label: ''
-              type: state-icon
-              icon: '${ vars[0] === ''Show'' ? ''mdi:eye'' : ''mdi:eye-off'' }'
-              tap_action:
-                action: call-service
-                service: input_select.select_next
-                service_data:
-                  entity_id: input_select.show_all
-            style:
-              top: 21.35%
-              left: 6.95%
-              width: 5%
-              transform: scale(1)
-              transformOrigin: center center
           - entity: switch.lock_door
             title: lock_door
             icon: mdi:lock
@@ -1081,20 +1159,6 @@ views:
               action: toggle
             hold_action:
               action: more-info
-          - entity: climate.radiator_bedroom
-            title: radiator_bedroom
-            icon: mdi:radiator
-            label: ''
-            style:
-              top: 70.02%
-              left: 85.63%
-              transform: scale(1)
-              transformOrigin: center center
-            type: state-icon
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
           - type: custom:config-template-card
             variables:
               - states['fan.fan_bedroom'].state
@@ -1188,20 +1252,6 @@ views:
               action: toggle
             hold_action:
               action: more-info
-          - entity: climate.radiator_living_room
-            title: radiator_living_room
-            icon: mdi:radiator
-            label: ''
-            style:
-              top: 37.99%
-              left: 76.54%
-              transform: scale(1)
-              transformOrigin: center center
-            type: state-icon
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
           - type: custom:config-template-card
             variables:
               - states['fan.fan_living_room'].state
@@ -1232,20 +1282,6 @@ views:
             style:
               top: 34.54%
               left: 42.99%
-              transform: scale(1)
-              transformOrigin: center center
-            type: state-icon
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
-          - entity: climate.radiator_bathroom
-            title: radiator_bathroom
-            icon: mdi:radiator
-            label: ''
-            style:
-              top: 28.26%
-              left: 39.84%
               transform: scale(1)
               transformOrigin: center center
             type: state-icon

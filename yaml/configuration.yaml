@@ -26,21 +26,12 @@ lovelace:
     - type: css
       url: 'https://fonts.googleapis.com/css?family=Poppins'
 
-# weather:
-#   - platform: template
-#     name: Weather
-#     condition_template: '{{ states(''weather.my_region'') }}'
-#     temperature_template: '{{ states(''input_number.temperature'') | float }}'
-#     temperature_unit: °C
-#     humidity_template: '{{ states(''input_number.humidity'') | float }}'
-#     forecast_template: '{{ state_attr(''weather.my_region'', ''forecast'') }}'
-
 climate:
   - platform: generic_thermostat
     name: radiator_bedroom
     heater: input_boolean.radiator_state_bedroom
     target_sensor: input_number.radiator_temperature_bedroom
-    min_temp: 5
+    min_temp: 15
     max_temp: 25
     ac_mode: false
     hot_tolerance: 0.5
@@ -53,7 +44,7 @@ climate:
     name: radiator_living_room
     heater: input_boolean.radiator_state_living_room
     target_sensor: input_number.radiator_temperature_living_room
-    min_temp: 5
+    min_temp: 17
     max_temp: 25
     ac_mode: false
     hot_tolerance: 0.5
@@ -66,7 +57,7 @@ climate:
     name: radiator_bathroom
     heater: input_boolean.radiator_state_bathroom
     target_sensor: input_number.radiator_temperature_bathroom
-    min_temp: 5
+    min_temp: 19
     max_temp: 25
     ac_mode: false
     hot_tolerance: 0.5
@@ -397,29 +388,24 @@ input_number:
     name: Fan percentage living room
     min: 0
     max: 100
-  temperature:
-    name: Temperature
-    min: -100
-    max: 100
-  humidity:
-    name: Humidity
-    min: 0
-    max: 100
   radiator_temperature_bedroom:
     name: Radiator temperature bedroom
     min: 5
     max: 25
     step: 0.5
+    initial: 15.6
   radiator_temperature_living_room:
     name: Radiator temperature living room
     min: 5
     max: 25
     step: 0.5
+    initial: 18.6
   radiator_temperature_bathroom:
     name: Radiator temperature bathroom
     min: 5
     max: 25
     step: 0.5
+    initial: 17
 
 input_boolean:
   fan_state_bedroom:
