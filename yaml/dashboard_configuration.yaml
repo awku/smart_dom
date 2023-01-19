@@ -863,16 +863,16 @@ views:
               - type: custom:hui-picture-entity-card
                 entity: camera.i_chzbgr_com
                 style:
-                  top: 38.5%
+                  top: 40%
                   left: 13.5%
-                  width: 22%
+                  width: 23%
                   font-family: Poppins
               - type: custom:hui-picture-entity-card
                 entity: camera.i_chzbgr_com_2
                 style:
-                  top: 66.5%
+                  top: 65.5%
                   left: 13.5%
-                  width: 22%
+                  width: 23%
                   font-family: Poppins
             type: conditional
           - type: custom:hui-weather-forecast-card
