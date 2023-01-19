@@ -21,3 +21,7 @@
  - Still Image URL: https://i.chzbgr.com/full/9488344064/h196B9947/infant-bed potem rename: CCTV Living Room
 12. Wejdź w Settings -> Add integration. Dodaj AccuWeather z ApiKey (wystarczy free konto na https://developer.accuweather.com/ )
 13. Preferowany dark mode :) (ikonka użytkownika po lewej -> Theme -> Dark)
+
+![Screenshot](demo_1.PNG)
+
+![Screenshot](demo_2.PNG)
