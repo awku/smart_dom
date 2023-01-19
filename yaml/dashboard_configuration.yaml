@@ -169,6 +169,7 @@ views:
             }
           }
         elements:
+          
           - conditions:
               - entity: cover.blinds_bedroom
                 state: closed
@@ -217,7 +218,7 @@ views:
           - type: state-label
             entity: input_select.show_all
             style:
-              top: 8%
+              top: 88%
               left: 5.5%
               font-family: Poppins
               font-weight: 100
@@ -231,30 +232,23 @@ views:
               service: input_select.select_next
               service_data:
                 entity_id: input_select.show_all
-          - type: custom:hui-thermostat-card
-            entity: climate.radiator_living_room
-            name: Main
+          - type: state-label
+            entity: input_select.show_cctv
             style:
-              top: 24%
-              left: 5%
-              width: 8.5%
+              top: 88%
+              left: 25.5%
               font-family: Poppins
-          - type: custom:hui-thermostat-card
-            entity: climate.radiator_bedroom
-            name: Bedroom
-            style:
-              top: 24%
-              left: 13.5%
-              width: 8.5%
-              font-family: Poppins
-          - type: custom:hui-thermostat-card
-            entity: climate.radiator_bathroom
-            name: Bathroom
-            style:
-              top: 24%
-              left: 22%
-              width: 8.5%
-              font-family: Poppins
+              font-weight: 100
+              font-size: 170%
+              transform: rotate(0deg)
+              border-radius: 50%
+              text-align: center
+              width: 17%
+            tap_action:
+              action: call-service
+              service: input_select.select_next
+              service_data:
+                entity_id: input_select.show_cctv
           - type: state-label
             entity: input_number.radiator_temperature_bathroom
             suffix: °C
@@ -297,110 +291,6 @@ views:
               border-radius: 50%
               text-align: center
               pointer-events: none
-          - type: state-icon
-            entity: switch.watering_can_bedroom
-            icon: mdi:flower-tulip
-            title: watering_can_bedroom
-            style:
-              top: 40%
-              transform: scale(2,2)
-              left: 6.5%
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
-          - type: state-label
-            entity: switch.watering_can_bedroom
-            prefix: "Bedroom Water "
-            style:
-              top: 45%
-              left: 3.2%
-              font-family: Poppins
-              font-weight: 100
-              font-size: 100%
-              transform: rotate(0deg)
-              border-radius: 50%
-              text-align: center
-            tap_action:
-              action: toggle
-          - type: state-icon
-            entity: switch.watering_can_living_room
-            icon: mdi:flower
-            title: watering_can_bedroom
-            style:
-              top: 40%
-              transform: scale(2,2)
-              left: 18.5%
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
-          - type: state-label
-            entity: switch.watering_can_living_room
-            prefix: "Living Room Water "
-            style:
-              top: 45%
-              left: 14.5%
-              font-family: Poppins
-              font-weight: 100
-              font-size: 100%
-              transform: rotate(0deg)
-              border-radius: 50%
-              text-align: center
-            tap_action:
-              action: toggle
-          - type: state-icon
-            entity: switch.washing_mashine_bathroom
-            icon: mdi:washing-machine
-            title: washing_mashine_bathroom
-            style:
-              top: 50%
-              transform: scale(2,2)
-              left: 6.5%
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
-          - type: state-label
-            entity: switch.washing_mashine_bathroom
-            prefix: "Washing Machine "
-            style:
-              top: 55%
-              left: 2.6%
-              font-family: Poppins
-              font-weight: 100
-              font-size: 100%
-              transform: rotate(0deg)
-              border-radius: 50%
-              text-align: center
-            tap_action:
-              action: toggle
-          - type: state-icon
-            entity: switch.robot_vacuum
-            icon: mdi:robot-vacuum
-            title: robot_vacuum
-            style:
-              top: 50%
-              transform: scale(2,2)
-              left: 18.5%
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
-          - type: state-label
-            entity: switch.robot_vacuum
-            prefix: "Robot Vacuum "
-            style:
-              top: 55%
-              left: 15.1%
-              font-family: Poppins
-              font-weight: 100
-              font-size: 100%
-              transform: rotate(0deg)
-              border-radius: 50%
-              text-align: center
-            tap_action:
-              action: toggle
           - type: custom:config-template-card
             variables:
               - states['light.led_strip_kitchen'].attributes.brightness
@@ -782,8 +672,219 @@ views:
                   pointer-events: none
             type: conditional
           - conditions:
+              - entity: input_select.show_cctv
+                state: Show CCTV
+            elements:
+            - type: custom:hui-thermostat-card
+              entity: climate.radiator_living_room
+              name: Main
+              style:
+                top: 37.1%
+                left: 5%
+                width: 8.5%
+                font-family: Poppins
+            - type: custom:hui-thermostat-card
+              entity: climate.radiator_bedroom
+              name: Bedroom
+              style:
+                top: 37.1%
+                left: 13.5%
+                width: 8.5%
+                font-family: Poppins
+            - type: custom:hui-thermostat-card
+              entity: climate.radiator_bathroom
+              name: Bathroom
+              style:
+                top: 37.1%
+                left: 22%
+                width: 8.5%
+                font-family: Poppins
+            - type: state-icon
+              entity: switch.watering_can_bedroom
+              icon: mdi:flower-tulip
+              title: watering_can_bedroom
+              style:
+                top: 49%
+                transform: scale(2,2)
+                left: 6.5%
+              tap_action:
+                action: toggle
+              hold_action:
+                action: more-info
+            - type: state-label
+              entity: switch.watering_can_bedroom
+              prefix: "Bedroom Water "
+              style:
+                top: 54%
+                left: 3.2%
+                font-family: Poppins
+                font-weight: 100
+                font-size: 100%
+                transform: rotate(0deg)
+                border-radius: 50%
+                text-align: center
+              tap_action:
+                action: toggle
+            - type: state-icon
+              entity: switch.watering_can_living_room
+              icon: mdi:flower
+              title: watering_can_bedroom
+              style:
+                top: 49%
+                transform: scale(2,2)
+                left: 18.5%
+              tap_action:
+                action: toggle
+              hold_action:
+                action: more-info
+            - type: state-label
+              entity: switch.watering_can_living_room
+              prefix: "Living Room Water "
+              style:
+                top: 54%
+                left: 14.5%
+                font-family: Poppins
+                font-weight: 100
+                font-size: 100%
+                transform: rotate(0deg)
+                border-radius: 50%
+                text-align: center
+              tap_action:
+                action: toggle
+            - type: state-icon
+              entity: switch.washing_mashine_bathroom
+              icon: mdi:washing-machine
+              title: washing_mashine_bathroom
+              style:
+                top: 59%
+                transform: scale(2,2)
+                left: 6.5%
+              tap_action:
+                action: toggle
+              hold_action:
+                action: more-info
+            - type: state-label
+              entity: switch.washing_mashine_bathroom
+              prefix: "Washing Machine "
+              style:
+                top: 64%
+                left: 2.6%
+                font-family: Poppins
+                font-weight: 100
+                font-size: 100%
+                transform: rotate(0deg)
+                border-radius: 50%
+                text-align: center
+              tap_action:
+                action: toggle
+            - type: state-icon
+              entity: switch.robot_vacuum
+              icon: mdi:robot-vacuum
+              title: robot_vacuum
+              style:
+                top: 59%
+                transform: scale(2,2)
+                left: 18.5%
+              tap_action:
+                action: toggle
+              hold_action:
+                action: more-info
+            - type: state-label
+              entity: switch.robot_vacuum
+              prefix: "Robot Vacuum "
+              style:
+                top: 64%
+                left: 15.1%
+                font-family: Poppins
+                font-weight: 100
+                font-size: 100%
+                transform: rotate(0deg)
+                border-radius: 50%
+                text-align: center
+              tap_action:
+                action: toggle
+            - type: state-icon
+              entity: switch.coffee_maker_kitchen
+              icon: mdi:coffee-maker
+              title: coffee_maker_kitchen
+              style:
+                top: 69%
+                transform: scale(2,2)
+                left: 6.5%
+              tap_action:
+                action: toggle
+              hold_action:
+                action: more-info
+            - type: state-label
+              entity: switch.coffee_maker_kitchen
+              prefix: "Coffee Maker "
+              style:
+                top: 74%
+                left: 3.5%
+                font-family: Poppins
+                font-weight: 100
+                font-size: 100%
+                transform: rotate(0deg)
+                border-radius: 50%
+                text-align: center
+              tap_action:
+                action: toggle
+            - type: state-icon
+              entity: switch.kettle_kitchen
+              icon: mdi:kettle
+              title: kettle_kitchen
+              style:
+                top: 69%
+                transform: scale(2,2)
+                left: 18.5%
+              tap_action:
+                action: toggle
+              hold_action:
+                action: more-info
+            - type: state-label
+              entity: switch.kettle_kitchen
+              prefix: "Kettle "
+              style:
+                top: 74%
+                left: 17.2%
+                font-family: Poppins
+                font-weight: 100
+                font-size: 100%
+                transform: rotate(0deg)
+                border-radius: 50%
+                text-align: center
+              tap_action:
+                action: toggle
+            type: conditional
+          - conditions:
+              - entity: input_select.show_cctv
+                state: Do not show CCTV
+            elements:
+              - type: custom:hui-picture-entity-card
+                entity: camera.i_chzbgr_com
+                style:
+                  top: 38.5%
+                  left: 13.5%
+                  width: 22%
+                  font-family: Poppins
+              - type: custom:hui-picture-entity-card
+                entity: camera.i_chzbgr_com_2
+                style:
+                  top: 66.5%
+                  left: 13.5%
+                  width: 22%
+                  font-family: Poppins
+            type: conditional
+          - type: custom:hui-weather-forecast-card
+            entity: weather.home
+            style:
+              top: 13.5%
+              left: 13.5%
+              width: 25.5%
+              font-family: Poppins
+          - conditions:
               - entity: input_select.show_all
-                state: Do not show light icons
+                state: Show light icons
             elements:
               - style:
                   top: 65.9%
@@ -914,7 +1015,7 @@ views:
             type: conditional
           - conditions:
               - entity: input_select.show_all
-                state: Show light icons
+                state: Do not show light icons
             elements:
               - type: custom:decluttering-card
                 template: ceiling_light_icon
@@ -947,7 +1048,7 @@ views:
                 style:
                   top: 85.40%
                   left: 57.50%
-                  transform: scale(1)
+                  transform: rotate(-45deg)
                   transformOrigin: center center
                 type: state-icon
                 tap_action:
@@ -1036,7 +1137,7 @@ views:
                 label: ''
                 style:
                   top: 22.92%
-                  left: 55.22%
+                  left: 55.9%
                   transform: scale(1)
                   transformOrigin: center center
                 type: state-icon
@@ -1050,7 +1151,7 @@ views:
                 label: ''
                 style:
                   top: 16.01%
-                  left: 51.70%
+                  left: 52.5%
                   transform: scale(1)
                   transformOrigin: center center
                 type: state-icon
@@ -1063,8 +1164,8 @@ views:
                 icon: mdi:led-strip
                 label: ''
                 style:
-                  top: 18.52%
-                  left: 77.77%
+                  top: 17%
+                  left: 78.5%
                   transform: scale(1)
                   transformOrigin: center center
                 type: state-icon
@@ -1126,8 +1227,8 @@ views:
                 label: ''
                 style:
                   top: 27.94%
-                  left: 29.18%
-                  transform: scale(1)
+                  left: 29.8%
+                  transform: rotate(-90deg)
                   transformOrigin: center center
                 type: state-icon
                 tap_action:
@@ -1147,68 +1248,32 @@ views:
                   - top: 29.71%
                   - left: 33.82%
             type: conditional
-          - entity: switch.lock_door
-            title: lock_door
-            icon: mdi:lock
-            label: ''
+          - type: custom:config-template-card
+            variables:
+              - states['switch.lock_door'].state
+            entities:
+              - switch.lock_door
+            element:
+              entity: switch.lock_door
+              title: lock_door
+              label: ''
+              type: state-icon
+              icon: '${ vars[0] === ''on'' ? ''mdi:lock'' : ''mdi:lock-open'' }'
+              tap_action:
+                action: toggle
+              hold_action:
+                action: more-info
             style:
-              top: 48.98%
+              top: 49.4%
               left: 31.81%
-              transform: scale(1)
+              transform: rotate(-90deg)
               transformOrigin: center center
-            type: state-icon
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
-          - entity: input_boolean.cctv_door
-            title: cctv_door
-            icon: mdi:cctv
-            label: ''
-            style:
-              top: 33.28%
-              left: 23.42%
-              transform: scale(1)
-              transformOrigin: center center
-            type: state-icon
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
-          - entity: switch.coffee_maker_kitchen
-            title: coffee_maker_kitchen
-            icon: mdi:coffee-maker
-            label: ''
-            style:
-              top: 78.18%
-              left: 62.56%
-              transform: scale(1)
-              transformOrigin: center center
-            type: state-icon
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
-          - entity: switch.kettle_kitchen
-            title: kettle_kitchen
-            icon: mdi:kettle
-            label: ''
-            style:
-              top: 78.18%
-              left: 56.61%
-              transform: scale(1)
-              transformOrigin: center center
-            type: state-icon
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
           - entity: switch.tv_bedroom
             title: tv_bedroom
             icon: mdi:television
             label: ''
             style:
-              top: 55.01%
+              top: 56.01%
               left: 76.89%
               transform: scale(1)
               transformOrigin: center center
@@ -1222,7 +1287,7 @@ views:
             icon: mdi:disc-player
             label: ''
             style:
-              top: 55.01%
+              top: 56.01%
               left: 72.70%
               transform: scale(1)
               transformOrigin: center center
@@ -1231,20 +1296,26 @@ views:
               action: toggle
             hold_action:
               action: more-info
-          - entity: cover.blinds_bedroom
-            title: blinds_bedroom
-            icon: mdi:blinds
-            label: ''
+          - type: custom:config-template-card
+            variables:
+              - states['cover.blinds_bedroom'].state
+            entities:
+              - cover.blinds_bedroom
+            element:
+              entity: cover.blinds_bedroom
+              title: blinds_bedroom
+              label: ''
+              type: state-icon
+              icon: '${ vars[0] === ''closed'' ? ''mdi:blinds'' : ''mdi:blinds-open'' }'
+              tap_action:
+                action: toggle
+              hold_action:
+                action: more-info
             style:
               top: 74.41%
               left: 91.22%
-              transform: scale(1)
+              transform: rotate(90deg)
               transformOrigin: center center
-            type: state-icon
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
           - type: custom:config-template-card
             variables:
               - states['fan.fan_bedroom'].state
@@ -1268,20 +1339,6 @@ views:
               animation: >-
                 ${ vars[0] === 'on' ? 'rotation '+100/vars[1]+'s linear
                 infinite' : 'none' }
-          - entity: input_boolean.cctv_living_room
-            title: cctv_living_room
-            icon: mdi:cctv
-            label: ''
-            style:
-              top: 45.21%
-              left: 85.63%
-              transform: scale(1)
-              transformOrigin: center center
-            type: state-icon
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
           - entity: switch.tv_living_room
             title: tv_living_room
             icon: mdi:television
@@ -1310,20 +1367,26 @@ views:
               action: toggle
             hold_action:
               action: more-info
-          - entity: cover.blinds_living_room
-            title: blinds_living_room
-            icon: mdi:blinds
-            label: ''
+          - type: custom:config-template-card
+            variables:
+              - states['cover.blinds_living_room'].state
+            entities:
+              - cover.blinds_living_room
+            element:
+              entity: cover.blinds_living_room
+              title: blinds_living_room
+              label: ''
+              type: state-icon
+              icon: '${ vars[0] === ''closed'' ? ''mdi:blinds'' : ''mdi:blinds-open'' }'
+              tap_action:
+                action: toggle
+              hold_action:
+                action: more-info
             style:
               top: 30.77%
               left: 79.69%
-              transform: scale(1)
+              transform: rotate(90deg)
               transformOrigin: center center
-            type: state-icon
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
           - type: custom:config-template-card
             variables:
               - states['fan.fan_living_room'].state
@@ -1347,28 +1410,34 @@ views:
               animation: >-
                 ${ vars[0] === 'on' ? 'rotation '+100/vars[1]+'s linear
                 infinite' : 'none' }
-          - entity: cover.blinds_bathroom
-            title: blinds_bathroom
-            icon: mdi:blinds
-            label: ''
+          - type: custom:config-template-card
+            variables:
+              - states['cover.blinds_bathroom'].state
+            entities:
+              - cover.blinds_bathroom
+            element:
+              entity: cover.blinds_bathroom
+              title: blinds_bathroom
+              label: ''
+              type: state-icon
+              icon: '${ vars[0] === ''closed'' ? ''mdi:blinds'' : ''mdi:blinds-open'' }'
+              tap_action:
+                action: toggle
+              hold_action:
+                action: more-info
             style:
               top: 13.81%
               left: 36.35%
               transform: scale(1)
               transformOrigin: center center
-            type: state-icon
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
           - entity: light.outdoor_lamp_door_1
             title: outdoor_lamp_door_1
             icon: mdi:outdoor-lamp
             label: ''
             style:
               top: 56.51%
-              left: 23.94%
-              transform: scale(1)
+              left: 25.4%
+              transform: scaleX(-1)
               transformOrigin: center center
             type: state-icon
             tap_action:
@@ -1380,9 +1449,9 @@ views:
             icon: mdi:outdoor-lamp
             label: ''
             style:
-              top: 54.32%
-              left: 92.10%
-              transform: scale(1)
+              top: 55.5%
+              left: 91.3%
+              transform: rotate(-45deg)
               transformOrigin: center center
             type: state-icon
             tap_action:
@@ -1395,7 +1464,7 @@ views:
             label: ''
             style:
               top: 78.81%
-              left: 96.64%
+              left: 96%
               transform: scale(1)
               transformOrigin: center center
             type: state-icon
@@ -1408,9 +1477,9 @@ views:
             icon: mdi:outdoor-lamp
             label: ''
             style:
-              top: 12.56%
-              left: 82.31%
-              transform: scale(1)
+              top: 13.2%
+              left: 81.31%
+              transform: rotate(-45deg)
               transformOrigin: center center
             type: state-icon
             tap_action:
@@ -1423,7 +1492,7 @@ views:
             label: ''
             style:
               top: 29.83%
-              left: 84.93%
+              left: 84.25%
               transform: scale(1)
               transformOrigin: center center
             type: state-icon
@@ -1436,9 +1505,9 @@ views:
             icon: mdi:outdoor-lamp
             label: ''
             style:
-              top: 3.14%
+              top: 5%
               left: 34.08%
-              transform: scale(1)
+              transform: rotate(-90deg)
               transformOrigin: center center
             type: state-icon
             tap_action:

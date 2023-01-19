@@ -378,6 +378,12 @@ input_select:
       - Show light icons
       - Do not show light icons
     initial: Show light icons
+  show_cctv:
+    name: Show CCTV
+    options:
+      - Show CCTV
+      - Do not show CCTV
+    initial: Show CCTV
 
 input_number:
   fan_percentage_bedroom:
@@ -418,7 +424,3 @@ input_boolean:
     name: Radiator state living room
   radiator_state_bathroom:
     name: Radiator state bathroom
-  cctv_door:
-    name: CCTV door
-  cctv_living_room:
-    name: CCTV living room
