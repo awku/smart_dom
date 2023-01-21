@@ -14,12 +14,12 @@
  - config-template-card.js, decluttering-card.js i card-mod.js do *\\\192.168.1.111\config\www*
  - zrestartuj system (Developer Tools -> Restart)
 8. Przekopiuj zawartość yaml/configuration.yaml do /config/configuration.yaml w HA (File editor -> /config/configuration.yaml). Zapisz i w Developer Tools zrestartuj system.
-9. Utwórz nowy dashboard (Settings -> Dashboards -> Add dashboard). Otwórz utworzony dashboard, kliknij trzy kropki u góry z prawej strony i wybierz Edit Dashboard, potem Start with an empty dashboard i Take control.
-10. W nowym dashboardzie kliknij trzy kropki u góry z prawej strony i wybierz Edit Dashboard. Ponownie kliknij w krzy kropki u góry z prawej strony i Raw configuration editor. Do środka konfiguracji wklej zawartość pliku yaml/dashboard_configuration.yaml i zapisz.
-11. Wejdź w Settings -> Add integration. Dodaj dwie instancje Generic Camera z HTTP i wyłączonym Verify SSL certificate
+9. Wejdź w Settings -> Add integration. Dodaj dwie instancje Generic Camera z HTTP i wyłączonym Verify SSL certificate
  - Still Image URL: https://i.chzbgr.com/full/9488342272/h94E0A0D0/plant potem rename: CCTV Door
  - Still Image URL: https://i.chzbgr.com/full/9488344064/h196B9947/infant-bed potem rename: CCTV Living Room
-12. Wejdź w Settings -> Add integration. Dodaj AccuWeather z ApiKey (wystarczy free konto na https://developer.accuweather.com/ )
+10. Wejdź w Settings -> Add integration. Dodaj AccuWeather z ApiKey (wystarczy free konto na https://developer.accuweather.com/ )
+11. Utwórz nowy dashboard (Settings -> Dashboards -> Add dashboard). Otwórz utworzony dashboard, kliknij trzy kropki u góry z prawej strony i wybierz Edit Dashboard, potem Start with an empty dashboard i Take control.
+12. W nowym dashboardzie kliknij trzy kropki u góry z prawej strony i wybierz Edit Dashboard. Ponownie kliknij w krzy kropki u góry z prawej strony i Raw configuration editor. Do środka konfiguracji wklej zawartość pliku yaml/dashboard_configuration.yaml i zapisz.
 13. Preferowany dark mode :) (ikonka użytkownika po lewej -> Theme -> Dark)
 
 ![Screenshot](demo_1.PNG)
