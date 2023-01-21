@@ -217,7 +217,7 @@ views:
           - type: state-label
             entity: input_select.show_all
             style:
-              top: 88%
+              top: 82%
               left: 5.5%
               font-family: Poppins
               font-weight: 100
@@ -234,7 +234,7 @@ views:
           - type: state-label
             entity: input_select.show_cctv
             style:
-              top: 88%
+              top: 82%
               left: 25.5%
               font-family: Poppins
               font-weight: 100
@@ -1532,4 +1532,11 @@ views:
               transformOrigin: center center
               opacity: 1
               pointer-events: none
+          - type: custom:hui-input-select-entity-row
+            entity: input_select.select_scene
+            style:
+              top: 92.5%
+              left: 23.5%
+              width: 15.5%
+              font-family: Poppins
         type: picture-elements

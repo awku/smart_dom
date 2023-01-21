@@ -11,7 +11,7 @@ tts:
   - platform: google_translate
 
 script: !include scripts.yaml
-scene: !include scenes.yaml
+# scene: !include scenes.yaml
 
 lovelace:
   mode: yaml
@@ -392,6 +392,14 @@ input_select:
       - Show CCTV
       - Do not show CCTV
     initial: Show CCTV
+  select_scene:
+    name: Select scene
+    options:
+      - Day
+      - Evening in living room
+      - Evening in bedroom
+      - Fun evening in living room
+    initial: Day
 
 input_number:
   fan_percentage_bedroom:
@@ -588,3 +596,270 @@ automation:
           switch.turn_off
         {% endif %}
       entity_id: switch.watering_can_bedroom
+
+  - alias: Select scene
+    id: aut7
+    trigger:
+    - platform: state
+      entity_id: input_select.select_scene
+    action:
+    - service: scene.turn_on
+      target:
+        entity_id: >
+          scene.{{ trigger.to_state.state  | lower | replace(" ", "_") }}
+
+scene:
+  - name: Day
+    id: day
+    entities:
+      light.wall_lightbulb_living_room: "off"
+      light.ceiling_light_table_kitchen: "off"
+      light.ceiling_light_kitchen_1: "off"
+      light.ceiling_light_kitchen_2: "off"
+      light.ceiling_light_kitchen_3: "off"
+      light.ceiling_light_kitchen_4: "off"
+      light.ceiling_light_hall_1: "off"
+      light.ceiling_light_hall_2: "off"
+      light.ceiling_light_hall_3: "off"
+      light.ceiling_light_living_room_1: "off"
+      light.ceiling_light_living_room_2: "off"
+      light.ceiling_light_living_room_3: "off"
+      light.ceiling_light_living_room_4: "off"
+      light.ceiling_light_living_room_5: "off"
+      light.ceiling_light_living_room_6: "off"
+      light.ceiling_light_living_room_7: "off"
+      light.ceiling_light_living_room_8: "off"
+      light.ceiling_light_bedroom_1: "off"
+      light.ceiling_light_bedroom_2: "off"
+      light.ceiling_light_bedroom_3: "off"
+      light.ceiling_light_bedroom_4: "off"
+      light.ceiling_light_bathroom_1: "off"
+      light.ceiling_light_bathroom_2: "off"
+      light.led_strip_kitchen: "off"
+      light.lamp_bedroom_1: "off"
+      light.lamp_bedroom_2: "off"
+      light.floor_lamp_living_room: "off"
+      light.wall_lighbulb_living_room: "off"
+      light.led_strip_living_room: "off"
+      light.mirror_light_bathroom: "off"
+      cover.blinds_bedroom: "open"
+      cover.blinds_living_room: "open"
+      cover.blinds_bathroom: "open"
+      switch.lock_door: "off"
+      switch.player_bedroom: "off"
+      switch.tv_bedroom: "off"
+      switch.tv_living_room: "off"
+      switch.player_living_room: "off"
+
+  - name: Evening in living room
+    id: evening_in_living_room
+    entities:
+      light.wall_lightbulb_living_room:
+        state: "on"
+        brightness: 125
+        rgb_color: [255, 209, 173]
+      light.ceiling_light_table_kitchen: "off"
+      light.ceiling_light_kitchen_1: "off"
+      light.ceiling_light_kitchen_2: "off"
+      light.ceiling_light_kitchen_3: "off"
+      light.ceiling_light_kitchen_4: "off"
+      light.ceiling_light_hall_1: "off"
+      light.ceiling_light_hall_2: "off"
+      light.ceiling_light_hall_3: "off"
+      light.ceiling_light_living_room_1:
+        state: "on"
+        brightness: 125
+        rgb_color: [255, 209, 173]
+      light.ceiling_light_living_room_2:
+        state: "on"
+        brightness: 125
+        rgb_color: [255, 209, 173]
+      light.ceiling_light_living_room_3:
+        state: "on"
+        brightness: 125
+        rgb_color: [255, 209, 173]
+      light.ceiling_light_living_room_4:
+        state: "on"
+        brightness: 125
+        rgb_color: [255, 209, 173]
+      light.ceiling_light_living_room_5:
+        state: "on"
+        brightness: 125
+        rgb_color: [255, 209, 173]
+      light.ceiling_light_living_room_6:
+        state: "on"
+        brightness: 125
+        rgb_color: [255, 209, 173]
+      light.ceiling_light_living_room_7:
+        state: "on"
+        brightness: 125
+        rgb_color: [255, 209, 173]
+      light.ceiling_light_living_room_8:
+        state: "on"
+        brightness: 125
+        rgb_color: [255, 209, 173]
+      light.ceiling_light_bedroom_1: "off"
+      light.ceiling_light_bedroom_2: "off"
+      light.ceiling_light_bedroom_3: "off"
+      light.ceiling_light_bedroom_4: "off"
+      light.ceiling_light_bathroom_1: "off"
+      light.ceiling_light_bathroom_2: "off"
+      light.led_strip_kitchen: "off"
+      light.lamp_bedroom_1: "off"
+      light.lamp_bedroom_2: "off"
+      light.floor_lamp_living_room:
+        state: "on"
+        brightness: 125
+        rgb_color: [255, 209, 173]
+      light.wall_lighbulb_living_room:
+        state: "on"
+        brightness: 125
+        rgb_color: [255, 209, 173]
+      light.led_strip_living_room:
+        state: "on"
+        brightness: 125
+        rgb_color: [255, 209, 173]
+      light.mirror_light_bathroom: "off"
+      cover.blinds_bedroom: "closed"
+      cover.blinds_living_room: "closed"
+      cover.blinds_bathroom: "closed"
+      switch.lock_door: "on"
+      switch.player_bedroom: "off"
+      switch.tv_bedroom: "off"
+      switch.tv_living_room: "on"
+      switch.player_living_room: "off"
+
+  - name: Evening in bedroom
+    id: evening_in_bedroom
+    entities:
+      light.wall_lightbulb_living_room: "off"
+      light.ceiling_light_table_kitchen: "off"
+      light.ceiling_light_kitchen_1: "off"
+      light.ceiling_light_kitchen_2: "off"
+      light.ceiling_light_kitchen_3: "off"
+      light.ceiling_light_kitchen_4: "off"
+      light.ceiling_light_hall_1: "off"
+      light.ceiling_light_hall_2: "off"
+      light.ceiling_light_hall_3: "off"
+      light.ceiling_light_living_room_1: "off"
+      light.ceiling_light_living_room_2: "off"
+      light.ceiling_light_living_room_3: "off"
+      light.ceiling_light_living_room_4: "off"
+      light.ceiling_light_living_room_5: "off"
+      light.ceiling_light_living_room_6: "off"
+      light.ceiling_light_living_room_7: "off"
+      light.ceiling_light_living_room_8: "off"
+      light.ceiling_light_bedroom_1:
+        state: "on"
+        brightness: 125
+        rgb_color: [255, 209, 173]
+      light.ceiling_light_bedroom_2:
+        state: "on"
+        brightness: 125
+        rgb_color: [255, 209, 173]
+      light.ceiling_light_bedroom_3:
+        state: "on"
+        brightness: 125
+        rgb_color: [255, 209, 173]
+      light.ceiling_light_bedroom_4:
+        state: "on"
+        brightness: 125
+        rgb_color: [255, 209, 173]
+      light.ceiling_light_bathroom_1: "off"
+      light.ceiling_light_bathroom_2: "off"
+      light.led_strip_kitchen: "off"
+      light.lamp_bedroom_1:
+        state: "on"
+        brightness: 125
+        rgb_color: [255, 209, 173]
+      light.lamp_bedroom_2:
+        state: "on"
+        brightness: 125
+        rgb_color: [255, 209, 173]
+      light.floor_lamp_living_room: "off"
+      light.wall_lighbulb_living_room: "off"
+      light.led_strip_living_room: "off"
+      light.mirror_light_bathroom: "off"
+      cover.blinds_bedroom: "closed"
+      cover.blinds_living_room: "closed"
+      cover.blinds_bathroom: "closed"
+      switch.lock_door: "on"
+      switch.player_bedroom: "off"
+      switch.tv_bedroom: "on"
+      switch.tv_living_room: "off"
+      switch.player_living_room: "off"
+
+  - name: Fun evening in living room
+    id: fun_evening_in_living_room
+    entities:
+      light.wall_lightbulb_living_room: "on"
+      light.ceiling_light_table_kitchen: "off"
+      light.ceiling_light_kitchen_1: "off"
+      light.ceiling_light_kitchen_2: "off"
+      light.ceiling_light_kitchen_3: "off"
+      light.ceiling_light_kitchen_4: "off"
+      light.ceiling_light_hall_1: "off"
+      light.ceiling_light_hall_2: "off"
+      light.ceiling_light_hall_3: "off"
+      light.ceiling_light_living_room_1:
+        state: "on"
+        brightness: 125
+        rgb_color: [0, 0, 255]
+      light.ceiling_light_living_room_2:
+        state: "on"
+        brightness: 125
+        rgb_color: [0, 255, 0]
+      light.ceiling_light_living_room_3:
+        state: "on"
+        brightness: 125
+        rgb_color: [255, 0, 0]
+      light.ceiling_light_living_room_4:
+        state: "on"
+        brightness: 125
+        rgb_color: [255, 0, 255]
+      light.ceiling_light_living_room_5:
+        state: "on"
+        brightness: 125
+        rgb_color: [0, 255, 255]
+      light.ceiling_light_living_room_6:
+        state: "on"
+        brightness: 125
+        rgb_color: [255, 255, 0]
+      light.ceiling_light_living_room_7:
+        state: "on"
+        brightness: 125
+        rgb_color: [0, 0, 255]
+      light.ceiling_light_living_room_8:
+        state: "on"
+        brightness: 125
+        rgb_color: [255, 0, 255]
+      light.ceiling_light_bedroom_1: "off"
+      light.ceiling_light_bedroom_2: "off"
+      light.ceiling_light_bedroom_3: "off"
+      light.ceiling_light_bedroom_4: "off"
+      light.ceiling_light_bathroom_1: "off"
+      light.ceiling_light_bathroom_2: "off"
+      light.led_strip_kitchen: "off"
+      light.lamp_bedroom_1: "off"
+      light.lamp_bedroom_2: "off"
+      light.floor_lamp_living_room:
+        state: "on"
+        brightness: 125
+        rgb_color: [255, 255, 0]
+      light.wall_lighbulb_living_room:
+        state: "on"
+        brightness: 125
+        rgb_color: [255, 0, 255]
+      light.led_strip_living_room:
+        state: "on"
+        brightness: 125
+        rgb_color: [0, 255, 255]
+      light.mirror_light_bathroom: "off"
+      cover.blinds_bedroom: "closed"
+      cover.blinds_living_room: "closed"
+      cover.blinds_bathroom: "closed"
+      switch.lock_door: "on"
+      switch.player_bedroom: "off"
+      switch.tv_bedroom: "off"
+      switch.tv_living_room: "on"
+      switch.player_living_room: "on"
