@@ -10,7 +10,6 @@ frontend:
 tts:
   - platform: google_translate
 
-automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 
@@ -221,6 +220,15 @@ light:
     entities:
       - light.ceiling_light_bathroom_1
       - light.ceiling_light_bathroom_2
+  - platform: group
+    name: Outdoor Lights Group
+    entities:
+      - light.outdoor_lamp_door_1
+      - light.outdoor_lamp_bedroom_1
+      - light.outdoor_lamp_bedroom_2
+      - light.outdoor_lamp_living_room_1
+      - light.outdoor_lamp_living_room_2
+      - light.outdoor_lamp_bathroom
 
 dummy:
   - platform: switch
@@ -390,10 +398,12 @@ input_number:
     name: Fan percentage bedroom
     min: 0
     max: 100
+    initial: 60
   fan_percentage_living_room:
     name: Fan percentage living room
     min: 0
     max: 100
+    initial: 100
   radiator_temperature_bedroom:
     name: Radiator temperature bedroom
     min: 5
@@ -416,11 +426,165 @@ input_number:
 input_boolean:
   fan_state_bedroom:
     name: Fan state bedroom
+    initial: true
   fan_state_living_room:
     name: Fan state living room
+    initial: true
   radiator_state_bedroom:
     name: Radiator state bedroom
   radiator_state_living_room:
     name: Radiator state living room
   radiator_state_bathroom:
     name: Radiator state bathroom
+
+input_datetime:
+  robot_vacuum_start_time:
+    name: Start Time Robot Vacuum
+    has_date: false
+    has_time: true
+    initial: "10:00:00"
+  robot_vacuum_end_time:
+    name: End Time Robot Vacuum
+    has_date: false
+    has_time: true
+    initial: "12:00:00"
+    
+  washing_machine_start_time:
+    name: Start Time Washing Machine
+    has_date: false
+    has_time: true
+    initial: "16:00:00"
+  washing_machine_end_time:
+    name: End Time Washing Machine
+    has_date: false
+    has_time: true
+    initial: "18:00:00"
+
+  coffee_maker_start_time:
+    name: Start Time Coffee Maker
+    has_date: false
+    has_time: true
+    initial: "07:30:00"
+  coffee_maker_end_time:
+    name: End Time Coffee Maker
+    has_date: false
+    has_time: true
+    initial: "07:40:00"
+
+  water_plants_start_time:
+    name: Start Time Water Plants
+    has_date: false
+    has_time: true
+    initial: "20:30:00"
+  water_plants_end_time:
+    name: End Time Water Plants
+    has_date: false
+    has_time: true
+    initial: "20:40:00"
+    
+automation:
+  - alias: Turn on washing machine
+    id: aut1
+    trigger:
+    - platform: time
+      at:
+      - input_datetime.washing_machine_start_time
+      - input_datetime.washing_machine_end_time
+    condition:
+      condition: time
+      weekday:
+      - sat
+    action:
+    - service: >
+        {% if trigger.now.hour == state_attr('input_datetime.washing_machine_start_time', 'hour') and
+          trigger.now.minute == state_attr('input_datetime.washing_machine_start_time', 'minute') %}
+          switch.turn_on
+        {%  else %}
+          switch.turn_off
+        {% endif %}
+      entity_id: switch.washing_mashine_bathroom
+
+  - alias: Turn on robot vacuum
+    id: aut2
+    trigger:
+    - platform: time
+      at:
+      - input_datetime.robot_vacuum_start_time
+      - input_datetime.robot_vacuum_end_time
+    action:
+    - service: >
+        {% if trigger.now.hour == state_attr('input_datetime.robot_vacuum_start_time', 'hour') and
+          trigger.now.minute == state_attr('input_datetime.robot_vacuum_start_time', 'minute') %}
+          switch.turn_on
+        {%  else %}
+          switch.turn_off
+        {% endif %}
+      entity_id: switch.robot_vacuum
+    
+  - alias: Turn on outdoor lights
+    id: aut3
+    trigger:
+    - platform: sun
+      event: sunset
+      offset: 0
+    action:
+    - service: light.turn_on
+      entity_id: light.outdoor_lights_group
+    
+  - alias: Turn off outdoor lights
+    id: aut4
+    trigger:
+    - platform: sun
+      event: sunrise
+      offset: 0
+    action:
+    - service: light.turn_off
+      entity_id: light.outdoor_lights_group
+
+  - alias: Turn on coffee maker
+    id: aut5
+    trigger:
+    - platform: time
+      at:
+      - input_datetime.coffee_maker_start_time
+      - input_datetime.coffee_maker_end_time
+    action:
+    - service: >
+        {% if trigger.now.hour == state_attr('input_datetime.coffee_maker_start_time', 'hour') and
+          trigger.now.minute == state_attr('input_datetime.coffee_maker_start_time', 'minute') %}
+          switch.turn_on
+        {%  else %}
+          switch.turn_off
+        {% endif %}
+      entity_id: switch.coffee_maker_kitchen
+
+  - alias: Water plants
+    id: aut6
+    trigger:
+    - platform: time
+      at:
+      - input_datetime.water_plants_start_time
+      - input_datetime.water_plants_end_time
+    condition:
+      condition: time
+      weekday:
+      - mon 
+      - wed
+      - sat
+    action:
+    - service: >
+        {% if trigger.now.hour == state_attr('input_datetime.water_plants_start_time', 'hour') and
+          trigger.now.minute == state_attr('input_datetime.water_plants_start_time', 'minute') %}
+          switch.turn_on
+        {%  else %}
+          switch.turn_off
+        {% endif %}
+      entity_id: switch.watering_can_living_room
+    - service: >
+        {% if trigger.now.hour == state_attr('input_datetime.water_plants_start_time', 'hour') and
+          trigger.now.minute == state_attr('input_datetime.water_plants_start_time', 'minute') %}
+          switch.turn_on
+        {%  else %}
+          switch.turn_off
+        {% endif %}
+      entity_id: switch.watering_can_bedroom

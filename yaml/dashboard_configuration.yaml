@@ -23,9 +23,9 @@ decluttering_templates:
           ${ vars[2] === 'on' ? "rgba(255, 255, 255, " + (vars[0] / 255) + ")" :
           "none" }
         box-shadow: >-
-          ${ vars[2] === 'on' ? "0 0 10px 6px rgba(255, 255, 255, " + (vars[0]
-          / 255) + ") , 0 0 20px 20px rgba(" + vars[1][0] +", " + vars[1][1] +
-          ", " + vars[1][2] + ", " + (vars[0] / 255) + ")" : "none" }
+          ${ vars[2] === 'on' ? "0 0 10px 6px rgba(255, 255, 255, " + (vars[0] /
+          255) + ") , 0 0 20px 20px rgba(" + vars[1][0] +", " + vars[1][1] + ",
+          " + vars[1][2] + ", " + (vars[0] / 255) + ")" : "none" }
   ceiling_light_image:
     element:
       type: custom:config-template-card
@@ -169,7 +169,6 @@ views:
             }
           }
         elements:
-          
           - conditions:
               - entity: cover.blinds_bedroom
                 state: closed
@@ -309,8 +308,9 @@ views:
               width: 17.55%
               pointer-events: none
               box-shadow: >-
-                ${ vars[2] === 'on' ? "0px -25px 20px -20px rgba(" + vars[1][0] +", " + vars[1][1] +
-                ", " + vars[1][2] + ", " + (vars[0] / 255) + ")" : "none" }
+                ${ vars[2] === 'on' ? "0px -25px 20px -20px rgba(" + vars[1][0]
+                +", " + vars[1][1] + ", " + vars[1][2] + ", " + (vars[0] / 255)
+                + ")" : "none" }
           - type: custom:config-template-card
             variables:
               - states['light.led_strip_living_room'].attributes.brightness
@@ -328,8 +328,9 @@ views:
               width: 10.55%
               pointer-events: none
               box-shadow: >-
-                ${ vars[2] === 'on' ? "0px -25px 20px -20px rgba(" + vars[1][0] +", " + vars[1][1] +
-                ", " + vars[1][2] + ", " + (vars[0] / 255) + ")" : "none" }
+                ${ vars[2] === 'on' ? "0px -25px 20px -20px rgba(" + vars[1][0]
+                +", " + vars[1][1] + ", " + vars[1][2] + ", " + (vars[0] / 255)
+                + ")" : "none" }
           - type: custom:config-template-card
             variables:
               - states['light.led_strip_living_room'].attributes.brightness
@@ -347,8 +348,9 @@ views:
               width: 19.55%
               pointer-events: none
               box-shadow: >-
-                ${ vars[2] === 'on' ? "0px -25px 20px -20px rgba(" + vars[1][0] +", " + vars[1][1] +
-                ", " + vars[1][2] + ", " + (vars[0] / 255) + ")" : "none" }
+                ${ vars[2] === 'on' ? "0px -25px 20px -20px rgba(" + vars[1][0]
+                +", " + vars[1][1] + ", " + vars[1][2] + ", " + (vars[0] / 255)
+                + ")" : "none" }
           - type: custom:config-template-card
             variables:
               - states['light.outdoor_lamp_bathroom'].attributes.brightness
@@ -368,9 +370,10 @@ views:
               border-radius: 50%
               pointer-events: none
               box-shadow: >-
-                ${ vars[2] === 'on' ? "0 -30px 20px 1px rgba(255, 255, 255, " + (vars[0]
-                / 255) + ") , 0 -59px 40px 20px rgba(" + vars[1][0] +", " + vars[1][1] +
-                ", " + vars[1][2] + ", " + (vars[0] / 255) + ")" : "none" }
+                ${ vars[2] === 'on' ? "0 -30px 20px 1px rgba(255, 255, 255, " +
+                (vars[0] / 255) + ") , 0 -59px 40px 20px rgba(" + vars[1][0] +",
+                " + vars[1][1] + ", " + vars[1][2] + ", " + (vars[0] / 255) +
+                ")" : "none" }
           - type: custom:config-template-card
             variables:
               - states['light.outdoor_lamp_door_1'].attributes.brightness
@@ -390,9 +393,10 @@ views:
               border-radius: 20%
               pointer-events: none
               box-shadow: >-
-                ${ vars[2] === 'on' ? "-30px 0 20px 1px rgba(255, 255, 255, " + (vars[0]
-                / 255) + ") , -59px 0 40px 20px rgba(" + vars[1][0] +", " + vars[1][1] +
-                ", " + vars[1][2] + ", " + (vars[0] / 255) + ")" : "none" }
+                ${ vars[2] === 'on' ? "-30px 0 20px 1px rgba(255, 255, 255, " +
+                (vars[0] / 255) + ") , -59px 0 40px 20px rgba(" + vars[1][0] +",
+                " + vars[1][1] + ", " + vars[1][2] + ", " + (vars[0] / 255) +
+                ")" : "none" }
           - type: custom:config-template-card
             variables:
               - states['light.outdoor_lamp_living_room_1'].attributes.brightness
@@ -412,9 +416,10 @@ views:
               border-radius: 20%
               pointer-events: none
               box-shadow: >-
-                ${ vars[2] === 'on' ? "30px -30px 20px 1px rgba(255, 255, 255, " + (vars[0]
-                / 255) + ") , 59px -59px 40px 20px rgba(" + vars[1][0] +", " + vars[1][1] +
-                ", " + vars[1][2] + ", " + (vars[0] / 255) + ")" : "none" }
+                ${ vars[2] === 'on' ? "30px -30px 20px 1px rgba(255, 255, 255, "
+                + (vars[0] / 255) + ") , 59px -59px 40px 20px rgba(" +
+                vars[1][0] +", " + vars[1][1] + ", " + vars[1][2] + ", " +
+                (vars[0] / 255) + ")" : "none" }
           - type: custom:config-template-card
             variables:
               - states['light.outdoor_lamp_living_room_2'].attributes.brightness
@@ -434,9 +439,10 @@ views:
               border-radius: 20%
               pointer-events: none
               box-shadow: >-
-                ${ vars[2] === 'on' ? "30px 0 20px 1px rgba(255, 255, 255, " + (vars[0]
-                / 255) + ") , 59px 0 40px 20px rgba(" + vars[1][0] +", " + vars[1][1] +
-                ", " + vars[1][2] + ", " + (vars[0] / 255) + ")" : "none" }
+                ${ vars[2] === 'on' ? "30px 0 20px 1px rgba(255, 255, 255, " +
+                (vars[0] / 255) + ") , 59px 0 40px 20px rgba(" + vars[1][0] +",
+                " + vars[1][1] + ", " + vars[1][2] + ", " + (vars[0] / 255) +
+                ")" : "none" }
           - type: custom:config-template-card
             variables:
               - states['light.outdoor_lamp_bedroom_1'].attributes.brightness
@@ -456,9 +462,10 @@ views:
               border-radius: 20%
               pointer-events: none
               box-shadow: >-
-                ${ vars[2] === 'on' ? "30px -30px 20px 1px rgba(255, 255, 255, " + (vars[0]
-                / 255) + ") , 59px -59px 40px 20px rgba(" + vars[1][0] +", " + vars[1][1] +
-                ", " + vars[1][2] + ", " + (vars[0] / 255) + ")" : "none" }
+                ${ vars[2] === 'on' ? "30px -30px 20px 1px rgba(255, 255, 255, "
+                + (vars[0] / 255) + ") , 59px -59px 40px 20px rgba(" +
+                vars[1][0] +", " + vars[1][1] + ", " + vars[1][2] + ", " +
+                (vars[0] / 255) + ")" : "none" }
           - type: custom:config-template-card
             variables:
               - states['light.outdoor_lamp_bedroom_2'].attributes.brightness
@@ -478,9 +485,10 @@ views:
               border-radius: 20%
               pointer-events: none
               box-shadow: >-
-                ${ vars[2] === 'on' ? "30px 0 20px 1px rgba(255, 255, 255, " + (vars[0]
-                / 255) + ") , 59px 0 40px 20px rgba(" + vars[1][0] +", " + vars[1][1] +
-                ", " + vars[1][2] + ", " + (vars[0] / 255) + ")" : "none" }
+                ${ vars[2] === 'on' ? "30px 0 20px 1px rgba(255, 255, 255, " +
+                (vars[0] / 255) + ") , 59px 0 40px 20px rgba(" + vars[1][0] +",
+                " + vars[1][1] + ", " + vars[1][2] + ", " + (vars[0] / 255) +
+                ")" : "none" }
           - type: custom:decluttering-card
             template: small_light_image
             variables:
@@ -675,186 +683,186 @@ views:
               - entity: input_select.show_cctv
                 state: Show CCTV
             elements:
-            - type: custom:hui-thermostat-card
-              entity: climate.radiator_living_room
-              name: Main
-              style:
-                top: 37.1%
-                left: 5%
-                width: 8.5%
-                font-family: Poppins
-            - type: custom:hui-thermostat-card
-              entity: climate.radiator_bedroom
-              name: Bedroom
-              style:
-                top: 37.1%
-                left: 13.5%
-                width: 8.5%
-                font-family: Poppins
-            - type: custom:hui-thermostat-card
-              entity: climate.radiator_bathroom
-              name: Bathroom
-              style:
-                top: 37.1%
-                left: 22%
-                width: 8.5%
-                font-family: Poppins
-            - type: state-icon
-              entity: switch.watering_can_bedroom
-              icon: mdi:flower-tulip
-              title: watering_can_bedroom
-              style:
-                top: 49%
-                transform: scale(2,2)
-                left: 6.5%
-              tap_action:
-                action: toggle
-              hold_action:
-                action: more-info
-            - type: state-label
-              entity: switch.watering_can_bedroom
-              prefix: "Bedroom Water "
-              style:
-                top: 54%
-                left: 3.2%
-                font-family: Poppins
-                font-weight: 100
-                font-size: 100%
-                transform: rotate(0deg)
-                border-radius: 50%
-                text-align: center
-              tap_action:
-                action: toggle
-            - type: state-icon
-              entity: switch.watering_can_living_room
-              icon: mdi:flower
-              title: watering_can_bedroom
-              style:
-                top: 49%
-                transform: scale(2,2)
-                left: 18.5%
-              tap_action:
-                action: toggle
-              hold_action:
-                action: more-info
-            - type: state-label
-              entity: switch.watering_can_living_room
-              prefix: "Living Room Water "
-              style:
-                top: 54%
-                left: 14.5%
-                font-family: Poppins
-                font-weight: 100
-                font-size: 100%
-                transform: rotate(0deg)
-                border-radius: 50%
-                text-align: center
-              tap_action:
-                action: toggle
-            - type: state-icon
-              entity: switch.washing_mashine_bathroom
-              icon: mdi:washing-machine
-              title: washing_mashine_bathroom
-              style:
-                top: 59%
-                transform: scale(2,2)
-                left: 6.5%
-              tap_action:
-                action: toggle
-              hold_action:
-                action: more-info
-            - type: state-label
-              entity: switch.washing_mashine_bathroom
-              prefix: "Washing Machine "
-              style:
-                top: 64%
-                left: 2.6%
-                font-family: Poppins
-                font-weight: 100
-                font-size: 100%
-                transform: rotate(0deg)
-                border-radius: 50%
-                text-align: center
-              tap_action:
-                action: toggle
-            - type: state-icon
-              entity: switch.robot_vacuum
-              icon: mdi:robot-vacuum
-              title: robot_vacuum
-              style:
-                top: 59%
-                transform: scale(2,2)
-                left: 18.5%
-              tap_action:
-                action: toggle
-              hold_action:
-                action: more-info
-            - type: state-label
-              entity: switch.robot_vacuum
-              prefix: "Robot Vacuum "
-              style:
-                top: 64%
-                left: 15.1%
-                font-family: Poppins
-                font-weight: 100
-                font-size: 100%
-                transform: rotate(0deg)
-                border-radius: 50%
-                text-align: center
-              tap_action:
-                action: toggle
-            - type: state-icon
-              entity: switch.coffee_maker_kitchen
-              icon: mdi:coffee-maker
-              title: coffee_maker_kitchen
-              style:
-                top: 69%
-                transform: scale(2,2)
-                left: 6.5%
-              tap_action:
-                action: toggle
-              hold_action:
-                action: more-info
-            - type: state-label
-              entity: switch.coffee_maker_kitchen
-              prefix: "Coffee Maker "
-              style:
-                top: 74%
-                left: 3.5%
-                font-family: Poppins
-                font-weight: 100
-                font-size: 100%
-                transform: rotate(0deg)
-                border-radius: 50%
-                text-align: center
-              tap_action:
-                action: toggle
-            - type: state-icon
-              entity: switch.kettle_kitchen
-              icon: mdi:kettle
-              title: kettle_kitchen
-              style:
-                top: 69%
-                transform: scale(2,2)
-                left: 18.5%
-              tap_action:
-                action: toggle
-              hold_action:
-                action: more-info
-            - type: state-label
-              entity: switch.kettle_kitchen
-              prefix: "Kettle "
-              style:
-                top: 74%
-                left: 17.2%
-                font-family: Poppins
-                font-weight: 100
-                font-size: 100%
-                transform: rotate(0deg)
-                border-radius: 50%
-                text-align: center
-              tap_action:
-                action: toggle
+              - type: custom:hui-thermostat-card
+                entity: climate.radiator_living_room
+                name: Main
+                style:
+                  top: 37.1%
+                  left: 5%
+                  width: 8.5%
+                  font-family: Poppins
+              - type: custom:hui-thermostat-card
+                entity: climate.radiator_bedroom
+                name: Bedroom
+                style:
+                  top: 37.1%
+                  left: 13.5%
+                  width: 8.5%
+                  font-family: Poppins
+              - type: custom:hui-thermostat-card
+                entity: climate.radiator_bathroom
+                name: Bathroom
+                style:
+                  top: 37.1%
+                  left: 22%
+                  width: 8.5%
+                  font-family: Poppins
+              - type: state-icon
+                entity: switch.watering_can_bedroom
+                icon: mdi:flower-tulip
+                title: watering_can_bedroom
+                style:
+                  top: 49%
+                  transform: scale(2,2)
+                  left: 6.5%
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+              - type: state-label
+                entity: switch.watering_can_bedroom
+                prefix: 'Bedroom Water '
+                style:
+                  top: 54%
+                  left: 3.2%
+                  font-family: Poppins
+                  font-weight: 100
+                  font-size: 100%
+                  transform: rotate(0deg)
+                  border-radius: 50%
+                  text-align: center
+                tap_action:
+                  action: toggle
+              - type: state-icon
+                entity: switch.watering_can_living_room
+                icon: mdi:flower
+                title: watering_can_bedroom
+                style:
+                  top: 49%
+                  transform: scale(2,2)
+                  left: 18.5%
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+              - type: state-label
+                entity: switch.watering_can_living_room
+                prefix: 'Living Room Water '
+                style:
+                  top: 54%
+                  left: 14.5%
+                  font-family: Poppins
+                  font-weight: 100
+                  font-size: 100%
+                  transform: rotate(0deg)
+                  border-radius: 50%
+                  text-align: center
+                tap_action:
+                  action: toggle
+              - type: state-icon
+                entity: switch.washing_mashine_bathroom
+                icon: mdi:washing-machine
+                title: washing_mashine_bathroom
+                style:
+                  top: 59%
+                  transform: scale(2,2)
+                  left: 6.5%
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+              - type: state-label
+                entity: switch.washing_mashine_bathroom
+                prefix: 'Washing Machine '
+                style:
+                  top: 64%
+                  left: 2.6%
+                  font-family: Poppins
+                  font-weight: 100
+                  font-size: 100%
+                  transform: rotate(0deg)
+                  border-radius: 50%
+                  text-align: center
+                tap_action:
+                  action: toggle
+              - type: state-icon
+                entity: switch.robot_vacuum
+                icon: mdi:robot-vacuum
+                title: robot_vacuum
+                style:
+                  top: 59%
+                  transform: scale(2,2)
+                  left: 18.5%
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+              - type: state-label
+                entity: switch.robot_vacuum
+                prefix: 'Robot Vacuum '
+                style:
+                  top: 64%
+                  left: 15.1%
+                  font-family: Poppins
+                  font-weight: 100
+                  font-size: 100%
+                  transform: rotate(0deg)
+                  border-radius: 50%
+                  text-align: center
+                tap_action:
+                  action: toggle
+              - type: state-icon
+                entity: switch.coffee_maker_kitchen
+                icon: mdi:coffee-maker
+                title: coffee_maker_kitchen
+                style:
+                  top: 69%
+                  transform: scale(2,2)
+                  left: 6.5%
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+              - type: state-label
+                entity: switch.coffee_maker_kitchen
+                prefix: 'Coffee Maker '
+                style:
+                  top: 74%
+                  left: 3.5%
+                  font-family: Poppins
+                  font-weight: 100
+                  font-size: 100%
+                  transform: rotate(0deg)
+                  border-radius: 50%
+                  text-align: center
+                tap_action:
+                  action: toggle
+              - type: state-icon
+                entity: switch.kettle_kitchen
+                icon: mdi:kettle
+                title: kettle_kitchen
+                style:
+                  top: 69%
+                  transform: scale(2,2)
+                  left: 18.5%
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+              - type: state-label
+                entity: switch.kettle_kitchen
+                prefix: 'Kettle '
+                style:
+                  top: 74%
+                  left: 17.2%
+                  font-family: Poppins
+                  font-weight: 100
+                  font-size: 100%
+                  transform: rotate(0deg)
+                  border-radius: 50%
+                  text-align: center
+                tap_action:
+                  action: toggle
             type: conditional
           - conditions:
               - entity: input_select.show_cctv
